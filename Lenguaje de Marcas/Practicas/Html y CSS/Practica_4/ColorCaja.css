@@ -1,0 +1,80 @@
+/* =========================
+   CAJA PRINCIPAL
+   (Marco donde irán las cajas de colores)
+========================= */
+#caja1 {
+  border: 3px solid red; /* Borde rojo */
+  width: 500px;          /* Ancho de la caja principal */
+  height: 500px;         /* Alto de la caja principal */
+  position: relative;    /* Permite mover elementos hijos posicionados */
+  margin: 20px;          /* Separación alrededor */
+  overflow: hidden;      /* Oculta lo que sobresalga */
+}
+
+/* =========================
+   CLASES GENERALES
+   (Tamaño base de cada cuadrito)
+========================= */
+.tamaño {
+  width: 50px;   /* Ancho del cuadro */
+  height: 50px;  /* Alto del cuadro */
+  margin: 0;     /* Sin margen */
+}
+
+/* =========================
+   COLORES - PRIMER CONJUNTO
+   (Cuadros normales alineados sin moverlos)
+========================= */
+.rojo1 {
+  background-color: red; /* Fondo rojo */
+}
+
+.azul1 {
+  background-color: skyblue; /* Fondo azul claro */
+}
+
+.verde1 {
+  background-color: greenyellow; /* Fondo verde */
+}
+
+.amarillo1 {
+  background-color: yellow; /* Fondo amarillo */
+}
+
+/* =========================
+   COLORES - SEGUNDO CONJUNTO
+   (Cuadros movidos en diagonal con position: relative)
+========================= */
+.rojo2 {
+  background-color: red; /* Fondo rojo */
+}
+
+.azul2 {
+  background-color: skyblue;
+  position: relative;  
+  left: 51px;          /* Se mueve a la derecha */
+  bottom: 51px;        /* Se mueve hacia arriba */
+}
+
+.verde2 {
+  background-color: greenyellow;
+  position: relative;
+  left: 102px;         /* Doble desplazamiento */
+  bottom: 102px;
+}
+
+.amarillo2 {
+  background-color: yellow;
+  position: relative;
+  left: 152px;
+  bottom: 152px;
+}
+
+/* =========================
+   COLORES - TERCER CONJUNTO
+   (Cuadros con colores básicos sin movimiento)
+========================= */
+.rojo3 { background-color: red; }
+.azul3 { background-color: skyblue; }
+.verde3 { background-color: greenyellow; }
+.amarillo3 { background-color: yellow; }

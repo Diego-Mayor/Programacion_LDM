@@ -1,0 +1,48 @@
+body {
+  background-color: #DC143C; /* Color de fondo de toda la página */
+  color: coral; /* Color del texto por defecto */
+  font-family: Arial, Helvetica, sans-serif; /* Tipo de letra general */
+}
+
+h1 {
+  color: white; /* Color del texto del título */
+  word-spacing: 30px; /* Espacio entre palabras */
+  font-family: 'DejaVu Sans'; /* Fuente del h1 */
+}
+
+ul {
+  width: 200px; /* Ancho del bloque de lista */
+  background-color: purple; /* Fondo de la lista */
+}
+
+a {
+  text-decoration: none; /* Quita el subrayado del enlace */
+  color: blue; /* Color del texto del enlace */
+}
+
+.fondover {
+  width: 250px; /* Ancho del párrafo */
+  background-color: olive; /* Color de fondo */
+  background-image: url('fulll-removebg-preview.png'); /* Imagen de fondo */
+  background-repeat: repeat-x; /* Repetición horizontal */
+  background-size: 25%; /* Escala de la imagen */
+  line-height: 50px; /* Altura de línea */
+  text-indent: 10%; /* Sangría al inicio del texto */
+}
+
+.verdef {
+  width: 300px; /* Ancho del párrafo */
+  background-color: olive; /* Fondo del párrafo */
+  font-size: 50%; /* Tamaño del texto reducido */
+}
+
+.mm2 {
+  width: 30px; /* Ancho de la imagen */
+  vertical-align: super; /* Eleva la imagen como superíndice */
+}
+
+#final {
+  font-style: italic; /* Texto en cursiva */
+  text-transform: lowercase; /* Convierte todo a minúsculas */
+  font-family: 'Free Sans'; /* Fuente del encabezado */
+}

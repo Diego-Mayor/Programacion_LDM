@@ -1,0 +1,80 @@
+<!DOCTYPE html> <!-- Indica que el documento usa HTML5 -->
+<html lang="en"> <!-- Idioma del documento -->
+
+<head>
+  <meta charset="UTF-8"> <!-- Permite caracteres especiales -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Vista adaptable -->
+  <title>Document</title> <!-- Título en la pestaña del navegador -->
+</head>
+
+<body>
+
+<h1>Formulario.</h1> <!-- Encabezado principal -->
+
+<!-- Formulario que enviará los datos al archivo login.php usando el método GET -->
+<form action="login.php" method="get">
+
+  <!-- Grupo de campos relacionados con información personal -->
+  <fieldset>
+    <legend>Informacion Personal</legend> <!-- Título del cuadro -->
+
+    <!-- Etiqueta que indica el nombre del campo -->
+    <label for="user">Nombre:</label>
+
+    <!-- Campo para escribir texto (nombre del usuario) -->
+    <input type="text" id="User" name="user" value="Su Nombre">
+    <br><br>
+
+    <!-- Etiqueta para el correo -->
+    <label for="mail">Correo: </label>
+
+    <!-- Campo de tipo email -->
+    <input type="email" id="mail" value="ejemplo@homail.com">
+    <br><br>
+
+    <!-- Campo de contraseña -->
+    Contraseña: <input type="password" name="pass"><br>
+
+  </fieldset>
+
+  <!-- Segundo bloque: Información laboral -->
+  <fieldset>
+    <legend>Informacion laboral</legend>
+
+    Experiencia: <br>
+
+    <!-- Lista desplegable múltiple (permite seleccionar más de una opción) -->
+    <select multiple name="tec">
+      <option value="1">HTML</option>
+      <option value="2">CSS</option>
+      <option value="3">JavaScript</option>
+    </select><br>
+
+    Lenguaje de Programcacion: <br>
+
+    <!-- Botones tipo radio: solo uno se puede seleccionar -->
+    <input type="radio" name="lenguaje" value="1">C++ <br>
+    <input type="radio" name="lenguaje" value="2">Java <br>
+    <input type="radio" name="lenguaje" value="3">Phyton <br>
+
+    Explique su experiencia como desarrollor: <br>
+
+    <!-- Área de texto para comentarios largos -->
+    <textarea name="comentario" rows="10" cols="40">
+      Escribe un comentario
+    </textarea><br>
+
+    <!-- Checkbox ya marcado por defecto -->
+    <input type="checkbox" name="newsletter" checked> Quiero Recibir Informacion
+  </fieldset>
+
+  <!-- Botón para enviar los datos -->
+  <input type="submit" value="Envio">
+
+  <!-- Botón para borrar lo escrito -->
+  <input type="reset" value="borrar">
+
+</form>
+
+</body>
+</html>

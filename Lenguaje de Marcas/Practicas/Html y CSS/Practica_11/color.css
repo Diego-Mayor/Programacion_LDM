@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Reset listas */
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menú principal */
+.menu > ul > li {
+    width: 150px;
+    background-color: darkgreen;
+    position: relative;
+}
+
+/* Enlaces */
+.menu a {
+    display: block;              /* Se puede pinchar todo el botón */
+    color: whitesmoke;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+
+/* Submenú oculto */
+.menu ul ul {
+    display: none;
+    position: absolute;
+    left: 150px;
+    top: 0;                      /* Alineado arriba */
+    background-color: olivedrab;
+    width: 260px;                /* Más ancho para una sola línea */
+}
+
+/* Mostrar submenú */
+.menu li:hover > ul {
+    display: block;
+}
+
+/* Elementos submenú */
+.menu ul ul li a {
+    white-space: nowrap;         /* Texto en una sola línea */
+}
+
+/* Hover submenú */
+.menu ul ul li a:hover {
+    background-color: seagreen;
+}

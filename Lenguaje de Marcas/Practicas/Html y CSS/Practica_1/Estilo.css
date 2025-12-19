@@ -1,0 +1,15 @@
+p {
+    color: orangered; /* Color del texto de todos los párrafos */
+}
+
+#rosa {
+    color: pink; /* Color del texto del elemento con ID "rosa" */
+}
+
+.amarillo {
+    color: purple; /* Color del texto de los elementos con clase "amarillo" */
+}
+
+h6 {
+    color: purple; /* Color del h6 (SERÁ reemplazado si hay estilo en línea) */
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html> <!-- Declaración de documento HTML5 -->
+<html lang="en"> <!-- Idioma del contenido -->
+
+<head>
+  <meta charset="UTF-8"> <!-- Permite caracteres especiales como ñ y tildes -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Diseño adaptable en móviles -->
+  <title>Document</title> <!-- Título de la página -->
+</head>
+
+<!-- Estilo directo aplicado al body (texto en negrita) -->
+<body style="font-weight: bold;">
+
+  <!-- Título con un enlace alrededor -->
+  <h1>
+    <a href="https://portal.edu.gva.es/iesserpis/es/1794-es/">
+      Horario de clases
+    </a>
+  </h1>
+
+  <!-- Inicio de tabla con borde -->
+  <table border="1px">
+
+    <!-- Primera fila: título principal -->
+    <tr>
+      <th>1 DAM</th>
+    </tr>
+
+    <!-- Segunda fila: nombres de los días -->
+    <tr>
+      <th></th> <!-- Columna vacía para la hora -->
+      <th>Lunes</th>
+      <th>Martes</th>
+      <th>Miércoles</th>
+      <th>Jueves</th>
+      <th>Viernes</th>
+    </tr>
+
+    <!-- Bloque 1: 8:00 - 9:50 -->
+    <tr>
+      <th>8:00 - 8:55</th>
+      <!-- rowspan une las siguientes dos filas en cada día -->
+      <td rowspan="2">Lenguaje de marcas</td>
+      <td rowspan="2">Entornos de desarrolo</td>
+      <td rowspan="2">Base de datos</td>
+      <td rowspan="2">Ingles profesional</td>
+      <td rowspan="2">Intinerario personal</td>
+    </tr>
+
+    <tr>
+      <th>8:55 - 9:50</th>
+    </tr>
+
+    <!-- Bloque 2: 9:50 - 10:45 -->
+    <tr>
+      <th>9:50 - 10:45</th>
+      <th>Intinerario personal</th>
+      <th>Sistemas informaticos</th>
+      <th>Programacion</th>
+      <th>Programacion</th>
+      <th>Programacion</th>
+    </tr>
+
+    <!-- Recreo 10:45 - 11:15 -->
+    <tr>
+      <th>10:45 - 11:15</th>
+      <!-- Imagen ocupando 5 columnas -->
+      <th colspan="5">
+        <img src="encabezado-twitter-juegos-duotono-degradado_23-2149231677.jpg" height="250" width="100%">
+      </th>
+    </tr>
+
+    <!-- Bloque 3: 11:15 - 14:00 -->
+    <tr>
+      <th>11:15 - 12:10</th>
+      <td rowspan="3">Base de datos</td>
+      <td rowspan="2">Sitemas Informaticos</td>
+      <td rowspan="2">Programacion</td>
+      <th>Progrmacion</th>
+      <td rowspan="3">Programacion</td>
+    </tr>
+
+    <tr>
+      <th>12:10 - 13:05</th>
+      <td rowspan="2">Sistemas Informaticos</td>
+    </tr>
+
+    <tr>
+      <th>13:05 - 14:00</th>
+      <th>Proyecto intermodular</th>
+      <th>Entornos de desarrollo</th>
+    </tr>
+
+    <!-- Recreo 14:30 - 15:25 -->
+    <tr>
+      <th>14:30 - 15:25</th>
+      <th>recreo</th>
+      <th>recreo</th>
+      <th>recreo</th>
+      <th>recreo</th>
+      <th>recreo</th>
+    </tr>
+
+    <!-- Última fila -->
+    <tr>
+      <th>14:30 - 15:25</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>Tutoria</th>
+      <th></th>
+    </tr>
+
+  </table>
+
+</body>
+</html>

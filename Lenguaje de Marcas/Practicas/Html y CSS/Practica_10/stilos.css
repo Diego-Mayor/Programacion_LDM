@@ -1,0 +1,11 @@
+/*borde y contorno punteado en el menu*/
+ul{width: 90px;
+    border: dotted blue; }
+
+/*los link no visitados de color amarillo y los si visitados de color verde limon */
+a:link { color: greenyellow; }
+a:visited { color: yellow; }
+
+
+a:link:hover { background-color: darkorange; }
+a:visited:hover { background-color: crimson; }

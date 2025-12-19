@@ -1,0 +1,96 @@
+<!DOCTYPE html> <!-- Declaración de documento HTML5 -->
+<html lang="en"> <!-- Idioma inglés -->
+
+<head>
+  <meta charset="UTF-8"> <!-- Permite usar acentos y caracteres especiales -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Diseño adaptable -->
+  <title>Document</title> <!-- Título de la pestaña del navegador -->
+</head>
+
+<body>
+
+  <h1>Tabla 2.</h1> <!-- Título de la página -->
+
+  <!-- Inicio de la tabla con borde -->
+  <table border="1px">
+
+    <!-- Fila 1 -->
+    <tr>
+      <!-- Celda que ocupa 2 columnas (Profesor) -->
+      <td colspan="2">Profesor</td>
+
+      <!-- Celda que ocupa 14 filas verticalmente con una imagen dentro -->
+      <th rowspan="14">
+        <img src="vista-superior-disco-duro-luz-purpura_23-2149413404.jpg" width="200" height="290">
+      </th>
+    </tr>
+
+    <!-- Fila 2: Encabezados de columnas -->
+    <tr>
+      <th>Modulo</th>
+      <th>Nombre</th>
+    </tr>
+
+    <!-- Fila 3: Primera asignatura -->
+    <tr>
+      <th>Lenguaje de marcas</th>
+      <th>Pedro Garcia</th>
+    </tr>
+
+    <!-- Fila 4 -->
+    <tr>
+      <th>Base de datos</th>
+      <th>Lucia gimeno</th>
+    </tr>
+
+    <!-- Fila 5 -->
+    <tr>
+      <th>Sitemas Informaticos</th>
+      <th>Raul Escribano</th>
+    </tr>
+
+    <!-- Fila 6 -->
+    <tr>
+      <th>Entornos de desarrollo</th>
+      <th>Maria Angels</th>
+    </tr>
+
+    <!-- Fila 7: Inicio de "Programación" -->
+    <tr>
+      <!-- Esta celda ocupa 3 filas hacia abajo -->
+      <td rowspan="3">Progrmacion</td>
+
+      <!-- Esta celda ocupa 5 filas hacia abajo (mismo profesor) -->
+      <td rowspan="5">Lionel Solano</td>
+    </tr>
+
+    <!-- Fila 8 (vacía porque las celdas vienen de arriba) -->
+    <tr></tr>
+
+    <!-- Fila 9 (vacía) -->
+    <tr></tr>
+
+    <!-- Fila 10 (vacía, conectada al rowspan de "Nombre") -->
+    <tr></tr>
+
+    <!-- Fila 11 -->
+    <tr>
+      <th>Tutorias</th>
+    </tr>
+
+    <!-- Fila 12 -->
+    <tr>
+      <th>Ingles</th>
+      <th>Dolores Gomez</th>
+    </tr>
+
+    <!-- Fila 13 -->
+    <tr>
+      <th>Formacion y orientacion laboral</th>
+      <th>Rafael Gonzales</th>
+    </tr>
+
+  </table>
+
+</body>
+</html>

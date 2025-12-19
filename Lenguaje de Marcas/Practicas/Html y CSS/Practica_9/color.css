@@ -1,0 +1,74 @@
+/* Imagen de fondo y centrado general */
+body {
+  background-image: url(img/El-universo-tiene-diez-veces-mas-galaxias-de-las-que-se-pensaba.jpg);
+  text-align: center;
+}
+
+/* Color del párrafo y la leyenda */
+p {
+  color: white;
+}
+
+legend {
+  color: white;
+}
+
+/* Tabla centrada */
+table {
+  width: 70%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+/* Bordes */
+table,
+tr,
+td {
+  border: 1px solid black;
+}
+
+/* Encabezado */
+tr:first-child {
+  background-color: darkblue;
+  color: #e89e10;
+  font-weight: bold;
+}
+
+/* Filas alternadas (solo datos) */
+tr:nth-child(even):not(:first-child):not(:last-child) {
+  background-color: lightgrey;
+  color: #444;
+}
+
+tr:nth-child(odd):not(:first-child):not(:last-child) {
+  background-color: cornflowerblue;
+  color: #444;
+}
+
+/* Última fila (Total) */
+tr:last-child {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
+
+/* Columna Year */
+td:nth-child(1) {
+  font-weight: bold;
+}
+
+/* Columna Title */
+td:nth-child(2) {
+  font-style: italic;
+}
+
+/* Columna Net */
+td:nth-child(5) {
+  text-decoration: underline;
+}
+
+/* Celda 117.9 (Solo) */
+tr:nth-last-child(2) td:nth-child(5) {
+  background-color: black;
+  color: black;
+}

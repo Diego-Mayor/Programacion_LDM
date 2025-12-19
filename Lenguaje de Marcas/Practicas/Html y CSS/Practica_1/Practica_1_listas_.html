@@ -1,0 +1,66 @@
+<!DOCTYPE html> <!-- Indica que el documento usa HTML5 -->
+<html lang="en"> <!-- Idioma establecido en inglés -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Permite usar caracteres como ñ, tildes, emojis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajuste responsivo en móviles -->
+
+    <link rel="stylesheet" href="Estilo.css"> <!-- Enlaza el archivo CSS externo -->
+
+    <style>
+        /* Estilos internos (CSS dentro del HTML) */
+        h1 { color: red; } /* Color para el encabezado h1 */
+        h6 { color: aqua; } /* Color inicial para h6 (puede ser sobrescrito) */
+    </style>
+
+    <title>Document</title> <!-- Título que aparece en la pestaña del navegador -->
+</head>
+
+<body>
+    <!-- Encabezado de nivel 1 -->
+    <h1>Un titular con encabezado de nivel 1 </h1>
+
+    <br><br><br> <!-- Saltos de línea (no recomendados, pero funcionales) -->
+
+    <!-- Encabezado de nivel 2 con clase "amarillo" (estilo desde el CSS externo) -->
+    <h2 class="amarillo">Un segundo titular con en cabezado nivel 2</h2>
+
+    <br><br><br>
+
+    <!-- Párrafo de texto normal -->
+    <p>Todo el texto generico, que procede de una lista anida</p>
+
+    <!-- Lista ordenada (OL) -->
+    <ol>
+        <!-- Primer elemento con ID "rosa" (CSS externo) -->
+        <li id="rosa">Primer Elemento
+            <!-- Lista desordenada anidada -->
+            <ul>
+                <!-- Estilo en línea para el fondo color aqua -->
+                <li style="background-color: aqua;">Elemento 1.1</li>
+                <li>Elemento 1.1</li>
+            </ul>
+        </li>
+
+        <!-- Segundo elemento -->
+        <li>Segundo Elemento
+            <ul>
+                <li>Elemento 2.1</li>
+                <li>Elemento 2.2</li>
+            </ul>
+        </li>
+
+        <!-- Tercer elemento -->
+        <li>Tercer Elemento
+            <ul>
+                <li>Elemento 3.1</li>
+                <li>Elemento 3.2</li>
+            </ul>
+        </li>
+    </ol>
+
+    <!-- Encabezado de nivel 6 con estilo en línea que sobrescribe el interno -->
+    <h6 style="color: blue;">hola mundo</h6>
+
+</body>
+</html>

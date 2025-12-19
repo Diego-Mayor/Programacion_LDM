@@ -1,0 +1,84 @@
+/* Color de fondo de la página y estilo general del cuerpo */
+body {
+  font-family: Arial, sans-serif; /* Tipo de letra */
+  color: purple; /* Color principal del texto */
+  background-color: #d8da3d; /* Fondo amarillo */
+  width: 70%; /* Limita el ancho del contenido */
+  margin: 0 auto; /* Centra el contenido horizontalmente */
+  padding: 100px 0; /* Separación arriba y abajo */
+}
+
+/* Estilos del título principal */
+h1 {
+  text-align: center; /* Centra el texto */
+  font-family: 'Liberation Sans', Arial, sans-serif; /* Fuente del título */
+  color: mediumorchid; /* Color del texto */
+  position: fixed; /* Mantiene el h1 fijo arriba */
+  top: 0; /* Pegado arriba */
+  left: 0; /* A la izquierda */
+  width: 100%; /* Ocupa todo el ancho */
+  padding: 20px 0; /* Separación vertical */
+  margin: 0; 
+  z-index: 1; /* Para que esté encima del resto */
+}
+
+/* Tamaño y aspecto de todas las cajas */
+div {
+  width: 400px; /* Ancho fijo de cada caja */
+  margin: 20px auto; /* Centrado y separación vertical */
+  padding: 20px; /* Relleno interno */
+}
+
+/* Alineación de los títulos h5 dentro de cada país */
+.tex1 { text-align: right; } /* Suiza */
+.tex2 { text-align: left; }  /* Grecia */
+.tex3 { text-align: center; } /* Noruega */
+
+/* Movimiento lateral de las cajas */
+.iz {
+  position: relative; /* Permite mover la caja */
+  right: 80px; /* Se mueve hacia la IZQUIERDA */
+}
+
+.dere {
+  position: relative;
+  left: 80px; /* Se mueve hacia la DERECHA */
+}
+
+.cent {
+  position: relative; /* Sin desplazamiento (queda centrada) */
+}
+
+/* Bordes y colores de las cajas */
+.suiza {
+  border: 3px solid; /* Borde sólido */
+  border-color: red; /* Borde rojo */
+  background-color: white; /* Fondo blanco */
+}
+
+.grecia {
+  border: 3px dotted; /* Borde punteado */
+  border-color: blue; /* Azul */
+  background-color: white;
+}
+
+.noruega {
+  border: 3px dashed; /* Borde discontinuo */
+  border-color: red; /* Rojo */
+  background-color: blue; /* Fondo azul */
+}
+
+/* Ubicación de las imágenes en los textos */
+.ims {
+  float: left; /* Imagen flota a la izquierda */
+  margin: 10px 5px; /* Separación */
+}
+
+.img {
+  float: right; /* Imagen a la derecha */
+  margin: 10px 5px;
+}
+
+.imn {
+  margin: 10px 5px; /* Imagen principal centrada */
+}

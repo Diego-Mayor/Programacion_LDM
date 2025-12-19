@@ -1,0 +1,88 @@
+<!DOCTYPE html> <!-- Declaración del tipo de documento HTML5 -->
+<html lang="es"> <!-- Idioma del documento -->
+
+<head>
+  <meta charset="UTF-8"> <!-- Permite caracteres especiales como ñ y tildes -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajuste para móviles -->
+  <title>Formulario con GET</title> <!-- Título visible en la pestaña -->
+</head>
+
+<body>
+
+  <!-- Formulario que enviará los datos mediante el método GET -->
+  <form method="get">
+
+    <!-- Primer bloque de información agrupada -->
+    <fieldset>
+      <legend>Información Personal</legend> <!-- Título del grupo -->
+
+      <!-- Campo de texto para escribir el nombre -->
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" value="Su Nombre"><br>
+
+      <!-- Campo de texto para escribir el apellido -->
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" name="apellido" value="Apellido"><br>
+
+      <!-- Lista desplegable para seleccionar una provincia -->
+      <label for="provincia">Provincias:</label>
+      <select name="ubi" id="provincia">
+        <option value="1">Alicante</option>
+        <option value="2">Castellón</option>
+        <option value="3">Valencia</option>
+      </select>
+    </fieldset>
+
+    <!-- Segundo bloque con intereses del usuario -->
+    <fieldset>
+      <legend>Intereses</legend>
+
+      <!-- Radios: permite elegir solo un idioma -->
+      <label>
+        <input type="radio" name="idioma" value="ingles"> Inglés
+      </label><br>
+
+      <label>
+        <input type="radio" name="idioma" value="frances"> Francés
+      </label><br>
+
+      <label>
+        <input type="radio" name="idioma" value="castellano"> Castellano
+      </label><br><br>
+
+      <!-- Checkboxes: permiten seleccionar varias temáticas de noticias -->
+      Temática de las Noticias <br>
+
+      <label>
+        <input type="checkbox" name="temas" value="tecnologia"> Tecnología
+      </label><br>
+
+      <label>
+        <input type="checkbox" name="temas" value="robotica"> Robótica
+      </label><br>
+
+      <label>
+        <input type="checkbox" name="temas" value="redes"> Redes
+      </label><br>
+
+      <label>
+        <input type="checkbox" name="temas" value="programacion"> Programación
+      </label><br><br>
+
+      <!-- Área de texto para escribir comentarios -->
+      <label for="comentario">Observaciones:</label><br>
+      <textarea name="comentario" id="comentario" rows="5" cols="40">
+Escribe aquí tus comentarios
+      </textarea><br>
+    </fieldset>
+
+    <!-- Botón para enviar el formulario -->
+    <input type="submit" value="Enviar">
+
+    <!-- Botón para limpiar todos los campos -->
+    <input type="reset" value="Borrar">
+
+  </form>
+
+</body>
+</html>
