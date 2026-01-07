@@ -16,7 +16,7 @@ public class Ejer2 {
         int a = 4;
         int b = 5;
         System.out.println("El valor de la tabla en la posicion (" + a + "," + b + ") es: " + valorTabla(matriz, a, b));
-        
+
     }
     public static int[][] tablasMultiplicar(int n){
         int[][] matriz = new int[n][n];
@@ -30,8 +30,9 @@ public class Ejer2 {
     public static void imprimirMatriz(int[][] m){
         for (int i = 0; i < m.length; i++) {
             for (int j = 0; j < m.length; j++) {
-                System.out.println(m[i][j] + " ");
+                System.out.print(m[i][j] + "\t");
             }
+            System.out.println();
             System.out.println();
         }
     }
