@@ -13,9 +13,11 @@ public class Ejer2 {
         System.out.println("Tabla de multiplicar del 1 al 10:");
         int[][] matriz = tablasMultiplicar(n);
         imprimirMatriz(matriz);
+
         int a = 4;
         int b = 5;
         System.out.println("El valor de la tabla en la posicion (" + a + "," + b + ") es: " + valorTabla(matriz, a, b));
+
 
     }
     public static int[][] tablasMultiplicar(int n){
