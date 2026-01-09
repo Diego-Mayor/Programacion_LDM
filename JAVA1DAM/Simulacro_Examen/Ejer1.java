@@ -17,18 +17,34 @@ public class Ejer1 {
 
     }
     public static int calcularViajes(int max, int[] regalos){
-        int suma = 0;
-        int viajes = 0;
-        for (int i = 0; i < regalos.length; i++) {
-            suma +=  regalos[i];
-            if( max <= suma){
-                viajes++;
-            }else{
-                System.out.println(suma);
+    if (regalos.length == 0) {
+        return 0;
+    }
 
-            }
+    int suma = 0;
+    int viajes = 1;
+    System.out.print("Viaje " + viajes + ": ");
+
+    for (int i = 0; i < regalos.length; i++) {
+
+        // Si cabe el regalo en el viaje actual
+        if (suma + regalos[i] <= max) {
+            if (suma > 0) System.out.print(" + ");
+            System.out.print(regalos[i]);
+            suma += regalos[i];
+
+        } else {
+            // Termina un viaje y empieza otro
+            System.out.println(" = " + suma);
+            viajes++;
+            suma = regalos[i];
+            System.out.print("Viaje " + viajes + ": " + regalos[i]);
         }
-        System.out.println();
-        return viajes;
+    }
+
+    // Imprimir el último viaje
+    System.out.println(" = " + suma);
+
+    return viajes;
     }
 }
