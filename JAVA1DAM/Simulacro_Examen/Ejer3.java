@@ -2,7 +2,7 @@ package Simulacro_Examen;
 
 public class Ejer3 {
     public static void main(String[] args) {
-        // creamos el Arrays de mapa 
+        // creamos el Arrays de mapa
         char [][] mapa = {{'.', '.', 'T', '.'},
                           {'X', '.', 'X', '.'},
                           {'.', 'T', '.', 'X'},
@@ -11,7 +11,7 @@ public class Ejer3 {
         // creo el array de movimientos
         char[] movimientos = {'W','S','A','D'};
 
-        
+
     }
 
     public static int simularExploracion(char[][] mapa, char[] movimientos){
@@ -26,7 +26,7 @@ public class Ejer3 {
                     break;
                 case 'S': // Abajo
                     fila++;
-                    break; 
+                    break;
                 case 'A':
                     columna--; // Izquierda
                     break;
@@ -39,7 +39,7 @@ public class Ejer3 {
                     break;
                 case 'E': // Diagonal Abajo
                     fila++; //  Baja
-                    columna++; // Va a la dereha                    
+                    columna++; // Va a la dereha
                     break;
             }
             if (!esPosicionValida(mapa, fila, columna)) {
