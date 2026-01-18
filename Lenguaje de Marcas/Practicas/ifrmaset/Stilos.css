@@ -1,181 +1,255 @@
-/*Estilos principal*/
+/* 
+   ESTILO GENERAL
+ */
 body{
-    font-family: Arial, sans-serif;
-    background-image: url("Imagenes/fondo.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    color: #E0E0E0;
-    margin: 0;
-    text-align: center;
+  font-family: Arial, sans-serif;
+  background-image: url("Imagenes/fondo.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: #E0E0E0;
+  margin: 0;
 }
 
-/*Estilos de la cabecera de la pagina */
+/* 
+   CABECERA (LOGO)
+ */
 .Cabecera{
-    background-color: #212121;
-    text-align: center;
-    padding: 10px 0;
+  background-color: #212121;
+  text-align: center;
+  padding: 10px 0;
+  margin: 0;
 }
 
-/*Estilos del fondo del menu*/
+.Cabecera img{
+  height: 80px;
+  max-width: 90%;
+  border: none;
+}
+
+/* Para que en el frame del menú no haya márgenes raros */
 .Menu{
-    background-color: #212121;
+  margin: 0;
+  padding: 0;
+  background-color: #2B2B2B;
 }
 
-/*Estilos del menu horizontal*/
-.MenuHorizontal ul {
-    display: flex;      /* Horizontal */
-    flex-direction: row; /* Alinea los items en fila */
-    justify-content: center;
+/* 
+   MENÚ HORIZONTAL (DESPLEGABLE)
+ */
+.MenuHorizontal{
+  background-color: #2B2B2B;
+  padding: 10px 0;
+  border-top: 2px solid #E53935;
+  border-bottom: 2px solid #E53935;
 }
 
+.MenuHorizontal ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
 .MenuHorizontal ul li{
-    position: relative;
-    padding: 15px 20px;
+  position: relative;
 }
 
-.MenuHorizontal ul li a{
-    text-decoration: none;
-    color: #E0E0E0;
+.MenuHorizontal ul li > a{
+  display: block;
+  padding: 12px 16px;
+  background-color: #424242;
+  color: #E0E0E0;
+  text-decoration: none;
+  border-radius: 8px;
 }
 
-/*Submenu desplegable*/
+.MenuHorizontal ul li > a:hover{
+  background-color: #E53935;
+}
+
+/* Submenú */
 .MenuHorizontal ul li ul{
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #424242;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    min-width: 150px;
-    z-index: 1000;  /* ← CAMBIA de 10 a 1000 */
-}
-
-
-.MenuHorizontal ul li ul li{
-    padding: 10px;
-}
-
-.MenuHorizontal ul li ul li a{
-    color: #E0E0E0;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background-color: #424242;
+  border: 1px solid #E53935;
+  border-radius: 8px;
+  padding: 5px 0;
+  z-index: 1000;
 }
 
 .MenuHorizontal ul li:hover ul{
-    display: block;
+  display: block;
 }
 
-/*Estilos generales de contenido*/
+.MenuHorizontal ul li ul li a{
+  display: block;
+  padding: 10px 14px;
+  color: #E0E0E0;
+  text-decoration: none;
+}
+
+.MenuHorizontal ul li ul li a:hover{
+  background-color: #E53935;
+}
+
+/* 
+   CONTENIDO
+ */
 .contenido{
-    width: 80%;
-    margin: 20px auto;
-    background-color: rgba(33,33,33,0.85);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    color: #E0E0E0;
+  width: 80%;
+  margin: 20px auto;
+  background-color: #1E1E1E;
+  padding: 20px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
-/*Estilos tablas actividades y cuotas*/
-table{
-    margin: auto;
-    border-collapse: collapse;
-    width: 80%;
-}
+/* Utilidades */
+.centrado{ text-align: center; }
+.bloque-centrado{ text-align: center; }
+.inline{ display: inline; margin-right: 12px; }
 
-td, th{
-    border: 1px solid #E53935;
-    padding: 10px;
-    color: #E0E0E0;
-}
-
-/*Estilos listas*/
-ul{
-    text-align: left;
-    display: inline-block;
-}
-
-/*Estilos imagenes*/
-img{
-    border: 2px solid #E53935;
-    margin: 10px 0;
-}
-
-/*Estilos formulario contacto*/
-form{
-    width: 60%;
-    margin: auto;
-}
-
-.campo{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 12px;
-}
-
-label{
-    margin-bottom: 5px;
-    color: #E0E0E0;
-}
-
-input[type="text"],
-input[type="email"],
-textarea{
-    background-color: #424242;
-    color: #E0E0E0;
-    border: 1px solid #E53935;
-    padding: 6px;
-}
-
-/*Radio y checkbox*/
-input[type="radio"],
-input[type="checkbox"]{
-    accent-color: #E53935;
-}
-
-/*Botones del formulario*/
-input[type="submit"],
-input[type="reset"]{
-    background-color: #E53935;
-    color: #FFFFFF;
-    border: none;
-    padding: 8px 15px;
-    cursor: pointer;
-}
-
-/*Estilos de encabezados*/
+/* 
+   TÍTULOS
+ */
 h1{
-    color:#E53935;
-    margin-bottom: 15px;
+  color: #E53935;
+  margin-bottom: 15px;
 }
 
 h2, h3{
-    color:#FFC107;
+  color: #FFC107;
 }
 
-/*Estilos enlaces*/
+/* 
+   TEXTO
+ */
+p, li{
+  color: #E0E0E0;
+}
+
+p{
+  text-align: justify;
+}
+
+/* 
+   TABLAS
+ */
+table{
+  margin: 15px auto;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+th, td{
+  border: 1px solid #E53935;
+  padding: 10px;
+}
+
+/* 
+   LISTAS (SOLO en contenido)
+ */
+.contenido ul{
+  text-align: left;
+  display: inline-block;
+}
+
+/* 
+   IMÁGENES
+ */
+img{
+  border: 2px solid #E53935;
+  margin: 10px 0;
+  max-width: 100%;
+  height: auto;
+}
+
+/*
+   FORMULARIO
+ */
+form{
+  width: 70%;
+  margin: auto;
+  text-align: left;
+}
+
+fieldset{
+  border: 1px solid #E53935;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #2B2B2B;
+}
+
+legend{
+  color: #FFC107;
+  padding: 0 8px;
+}
+
+/* Labels arriba, inputs debajo */
+label{
+  display: block;
+  margin: 10px 0 6px;
+  color: #E0E0E0;
+}
+
+/* Inputs sin blanco / sin negro */
+input[type="text"],
+input[type="email"],
+textarea{
+  width: 100%;
+  background-color: #424242;
+  color: #E0E0E0;
+  border: 1px solid #E53935;
+  padding: 8px;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+textarea{
+  resize: vertical;
+}
+
+/* Cambiar color de radio y checkbox */
+input[type="radio"],
+input[type="checkbox"]{
+  accent-color: #E53935;
+}
+
+/* Botones */
+input[type="submit"],
+input[type="reset"]{
+  background-color: #E53935;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 16px;
+  margin: 10px 6px 0 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover{
+  background-color: #C62828;
+}
+
+/* 
+   ENLACES
+ */
 a{
-    color: #FFEB3B;
-    text-decoration: none;
+  color: #FFEB3B;
+  text-decoration: none;
 }
 
 a:hover{
-    text-decoration: underline;
-}
-
-/*Estilos Politica y Aviso Legal*/
-.contenido ul li a{
-    color: #FFEB3B;
-}
-
-/*Estilos para listas de Aviso Legal*/
-.contenido ul{
-    text-align: left;
-    display: inline-block;
-}
-
-/*Estilos para texto general*/
-p, li{
-    color: #E0E0E0;
+  text-decoration: underline;
 }

@@ -1,3 +1,4 @@
 {
-    "java.debug.settings.onBuildFailureProceed": true
+    "java.debug.settings.onBuildFailureProceed": true,
+    "livePreview.defaultPreviewPath": "/Lenguaje de Marcas/Practicas/ifrmaset/1_principal.html"
 }
