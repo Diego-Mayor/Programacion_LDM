@@ -1,36 +1,181 @@
 /*Estilos principal*/
+body{
+    font-family: Arial, sans-serif;
+    background-image: url("Imagenes/fondo.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    color: #E0E0E0;
+    margin: 0;
+    text-align: center;
+}
 
 /*Estilos de la cabecera de la pagina */
 .Cabecera{
     background-color: #212121;
+    text-align: center;
+    padding: 10px 0;
 }
 
 /*Estilos del fondo del menu*/
 .Menu{
-    background-color: #F5F5F5;
-}
-.MenuHorizontal{
-    width:750px;
-    border: solid gray 3px;
-    margin: 0 auto;
+    background-color: #212121;
 }
 
-/*Estilos del index*/
+/*Estilos del menu horizontal*/
+.MenuHorizontal ul {
+    display: flex;      /* Horizontal */
+    flex-direction: row; /* Alinea los items en fila */
+    justify-content: center;
+}
 
-/*Estilos de quienes somos */
 
-/*Estilos de actividades */
+.MenuHorizontal ul li{
+    position: relative;
+    padding: 15px 20px;
+}
 
-/*Estilos de cuotas */
+.MenuHorizontal ul li a{
+    text-decoration: none;
+    color: #E0E0E0;
+}
 
-/*Estilos de salas */
+/*Submenu desplegable*/
+.MenuHorizontal ul li ul{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #424242;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 150px;
+    z-index: 1000;  /* ← CAMBIA de 10 a 1000 */
+}
 
-/*Estilos de donde estamos */
 
-/*Estilos de contacto */
+.MenuHorizontal ul li ul li{
+    padding: 10px;
+}
 
-/*Estilos datos recibidos */
+.MenuHorizontal ul li ul li a{
+    color: #E0E0E0;
+}
 
-/*Estilos de politica y privacidad*/
+.MenuHorizontal ul li:hover ul{
+    display: block;
+}
 
-/*Estilos Aviso legal*/
+/*Estilos generales de contenido*/
+.contenido{
+    width: 80%;
+    margin: 20px auto;
+    background-color: rgba(33,33,33,0.85);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #E0E0E0;
+}
+
+/*Estilos tablas actividades y cuotas*/
+table{
+    margin: auto;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+td, th{
+    border: 1px solid #E53935;
+    padding: 10px;
+    color: #E0E0E0;
+}
+
+/*Estilos listas*/
+ul{
+    text-align: left;
+    display: inline-block;
+}
+
+/*Estilos imagenes*/
+img{
+    border: 2px solid #E53935;
+    margin: 10px 0;
+}
+
+/*Estilos formulario contacto*/
+form{
+    width: 60%;
+    margin: auto;
+}
+
+.campo{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+label{
+    margin-bottom: 5px;
+    color: #E0E0E0;
+}
+
+input[type="text"],
+input[type="email"],
+textarea{
+    background-color: #424242;
+    color: #E0E0E0;
+    border: 1px solid #E53935;
+    padding: 6px;
+}
+
+/*Radio y checkbox*/
+input[type="radio"],
+input[type="checkbox"]{
+    accent-color: #E53935;
+}
+
+/*Botones del formulario*/
+input[type="submit"],
+input[type="reset"]{
+    background-color: #E53935;
+    color: #FFFFFF;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+/*Estilos de encabezados*/
+h1{
+    color:#E53935;
+    margin-bottom: 15px;
+}
+
+h2, h3{
+    color:#FFC107;
+}
+
+/*Estilos enlaces*/
+a{
+    color: #FFEB3B;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+/*Estilos Politica y Aviso Legal*/
+.contenido ul li a{
+    color: #FFEB3B;
+}
+
+/*Estilos para listas de Aviso Legal*/
+.contenido ul{
+    text-align: left;
+    display: inline-block;
+}
+
+/*Estilos para texto general*/
+p, li{
+    color: #E0E0E0;
+}

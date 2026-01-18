@@ -6,45 +6,60 @@
     <title>Contacto - EnergyFit</title>
     <link rel="stylesheet" href="Stilos.css">
 </head>
-<body style="background-color: #F5F5F5;">
 
-<h1 style="color:#E53935; text-align:center;">📬 Ponte en contacto con nosotros</h1>
+<body class="contenido">
 
-<p style="text-align:center;">
+<h1>📬 Ponte en contacto con nosotros</h1>
+
+<p>
 Si tienes alguna duda o deseas más información sobre nuestros servicios, completa el siguiente formulario y nos pondremos en contacto contigo lo antes posible.
 </p>
 
 <form action="11_datos_recibidos.html" method="get">
 
 <fieldset>
-    <legend><strong>Datos personales</strong></legend><br>
+    <legend><strong>Datos personales</strong></legend>
 
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" required><br><br>
+    <div class="campo">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+    </div>
 
-    <label for="apellidos">Apellidos:</label>
-    <input type="text" id="apellidos" name="apellidos" required><br><br>
+    <div class="campo">
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required>
+    </div>
 
-    <label for="direccion">Dirección:</label>
-    <input type="text" id="direccion" name="direccion" required><br><br>
+    <div class="campo">
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" required>
+    </div>
 
-    <label for="poblacion">Población:</label>
-    <input type="text" id="poblacion" name="poblacion" required><br><br>
+    <div class="campo">
+        <label for="poblacion">Población:</label>
+        <input type="text" id="poblacion" name="poblacion" required>
+    </div>
 
-    <label for="correo">Correo electrónico:</label>
-    <input type="email" id="correo" name="correo" required><br><br>
+    <div class="campo">
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" required>
+    </div>
 
-    <label for="telefono">Teléfono:</label>
-    <input type="text" id="telefono" name="telefono"><br><br>
+    <div class="campo">
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono">
+    </div>
 
-    <label for="dni">DNI:</label>
-    <input type="text" id="dni" name="dni"><br><br>
+    <div class="campo">
+        <label for="dni">DNI:</label>
+        <input type="text" id="dni" name="dni">
+    </div>
 </fieldset>
 
 <br>
 
 <fieldset>
-    <legend><strong>Género</strong></legend><br>
+    <legend><strong>Género</strong></legend>
 
     <input type="radio" id="hombre" name="sexo" value="Hombre">
     <label for="hombre">Hombre</label><br>
@@ -55,14 +70,16 @@ Si tienes alguna duda o deseas más información sobre nuestros servicios, compl
     <input type="radio" id="otro" name="sexo" value="Otro">
     <label for="otro">Otro</label><br><br>
 
-    <label for="genero">Otro género (especifique):</label>
-    <input type="text" id="genero" name="genero">
+    <div class="campo">
+        <label for="genero">Otro género (especifique):</label>
+        <input type="text" id="genero" name="genero">
+    </div>
 </fieldset>
 
 <br>
 
 <fieldset>
-    <legend><strong>Actividades de interés</strong></legend><br>
+    <legend><strong>Actividades de interés</strong></legend>
 
     <input type="checkbox" id="spinning" name="actividad" value="Spinning">
     <label for="spinning">Spinning</label><br>
@@ -86,7 +103,7 @@ Si tienes alguna duda o deseas más información sobre nuestros servicios, compl
 <br>
 
 <fieldset>
-    <legend><strong>Comentarios</strong></legend><br>
+    <legend><strong>Comentarios</strong></legend>
     <textarea name="comentarios" rows="5" cols="40">Escriba aquí sus comentarios</textarea>
 </fieldset>
 
@@ -103,9 +120,10 @@ Si tienes alguna duda o deseas más información sobre nuestros servicios, compl
 </form>
 
 <hr>
-<p align="center">
-  <a href="12_politica_privacidad.html" target="_blank">Política de privacidad</a> |
-  <a href="13_aviso_legal.html" target="_blank">Aviso legal</a>
+
+<p>
+  <a href="12_politica_privacidad.html" target="Contenido">Política de privacidad</a> |
+  <a href="13_aviso_legal.html" target="Contenido">Aviso legal</a>
 </p>
 
 </body>
