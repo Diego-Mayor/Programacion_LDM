@@ -1,7 +1,5 @@
 package Nivel_Avanzado_Bucles_y_Repeticiones;
 
-import java.util.Scanner;
-
 public class Ejer13 {
     
 public static void main(String[] args) {
@@ -10,11 +8,19 @@ public static void main(String[] args) {
 
     int pares = 0;
     int impares = 0;
-    int contador = 0;
+    int contador = 1;
     
-     while (contador < 10) {
-        
+     while (contador <= 10) {
+        if(contador % 2 == 0){
+            pares += contador;
+        }else if(contador % 2 == 1){
+            impares += contador;
+        }
+        contador++;
      }
+
+     System.out.println("Los numeros Impares son : " + impares);
+     System.out.println("Los numeros Pares son: " + pares);
 
     
 }
