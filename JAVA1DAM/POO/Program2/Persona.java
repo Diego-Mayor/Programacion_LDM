@@ -17,6 +17,7 @@ public class Persona {
     public void imprime() {
         System.out.println(nombre + " " + apellido + " con el " + dni);
     }
+<<<<<<< HEAD
 
     // Getters
     public String getdni() {
@@ -60,4 +61,31 @@ public class Persona {
     public boolean esJubilado() {
         return edad >= 65;
     }
+=======
+    public String getDni() {
+        return dni;
+    }
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public String getApellido() {
+        return apellido;
+    }
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+    public int getEdad() {
+        return edad;
+    }
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+    
+>>>>>>> ecf8249 (nuevas funciones en POO)
 }

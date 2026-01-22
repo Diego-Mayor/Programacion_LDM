@@ -28,11 +28,17 @@ public class mainPersona {
         // ===== PERSONA 2 =====
         System.out.println("\nIntroduce los datos de la PERSONA 2");
 
+<<<<<<< HEAD
         System.out.print("DNI: ");
         String dni2 = leer.nextLine();
 
         System.out.print("Nombre: ");
         String nombre2 = leer.nextLine();
+=======
+        Rectangulo p1 = new Rectangulo(dni, nombre, apellido, edad);
+
+        Rectangulo p2 = new Rectangulo(dni, nombre, apellido, edad);
+>>>>>>> ecf8249 (nuevas funciones en POO)
 
         System.out.print("Apellido: ");
         String apellido2 = leer.nextLine();
