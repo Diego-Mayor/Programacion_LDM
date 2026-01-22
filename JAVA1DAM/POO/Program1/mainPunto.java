@@ -6,6 +6,7 @@ public class mainPunto {
         // Creación de objetos (instancias) de la clase Punto
         Punto p1 = new Punto(3, 4);
         Punto p2 = new Punto(7, 1);
+        Punto p3 = new Punto(-3, 7);
 
         // Uso de getters para acceder a atributos privados
         // (aunque aquí no se imprimen, solo se llaman)
