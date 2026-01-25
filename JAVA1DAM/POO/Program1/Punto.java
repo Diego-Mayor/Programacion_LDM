@@ -51,4 +51,17 @@ public class Punto {
         int dy = p.y - y;
         return Math.sqrt(dx * dx + dy * dy);
     }
+
+    // Metodom para cambiar x y y en un solo metodo
+    public void setXY(int x,int y){
+        this.x = x;
+        this.y = y;
+    }
+
+public static Punto puntoAleatorio(){
+    int  x = (int)(Math.random() * 201) - 100;
+    int y = (int)(Math.random() * 201) - 100;
+    return new Punto(x,y);
+}
+    
 }

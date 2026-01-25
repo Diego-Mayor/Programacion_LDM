@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 public class EuroMillonesAleatorio {
     public static void main(String[] args) {
-        generar(139838160);
+        generar(1);
     }
 
     public static void generar(int cantidad) {
