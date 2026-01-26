@@ -1,10 +1,10 @@
 -- 🟢 NIVEL 1 – MUY BÁSICO (SELECT)
--- Mostrar todos los clientes 
+-- Mostrar todos los clientes
 select * from clientes;
 
 -- Mostrar todos los productos.
 select * from productos;
- 
+
 -- Mostrar solo nombre y precios de los productos.
 select nombre, precio  from  productos;
 
@@ -21,7 +21,7 @@ select nombre, precio from productos where precio > 20;
 select nombre, stock from productos where stock < 50;
 
 -- Mostrar los pedidos con estado "pagado".
-select estado from pedidos where estado = 'pagado'; 
+select estado from pedidos where estado = 'pagado';
 
 -- Mostrar los clientes ordenados por nombre.
 select nombre from clientes order by nombre asc;
@@ -30,12 +30,12 @@ select nombre from clientes order by nombre asc;
 select nombre, precio from productos order by precio desc;
 
 				-- 🟢 NIVEL 2 – FILTROS (WHERE, AND, OR, BETWEEN, LIKE)
-                
+
 -- Mostrar los clientes registrados después del 2025-02-01.
 select nombre,fecha_registro from clientes where fecha_registro > '2025-02-01';
 
 -- Mostrar los productos con precio entre 15 y 30.
-select nombre, precio from productos where precio between 15 and 30 order by precio asc; 
+select nombre, precio from productos where precio between 15 and 30 order by precio asc;
 
 -- Mostrar los productos de la categoría Tecnología.
 select nombre from categorias where nombre = 'Tecnologia';
@@ -59,11 +59,11 @@ select nombre, email from clientes where email like '%@email.com%';
 select fecha_pedido from pedidos where fecha_pedido >= '2025-04-01' and fecha_pedido <= '2025-04-30';
 
 -- Mostrar los productos que no cuestan 25.
-select nombre, precio from productos where precio != 25; 
+select nombre, precio from productos where precio != 25;
 
 
 
--- 🟡 NIVEL 3 – FUNCIONES Y AGREGACIÓN
+				-- 🟡 NIVEL 3 – FUNCIONES Y AGREGACIÓN
 -- Mostrar el precio máximo de los productos.
 
 
@@ -95,7 +95,7 @@ select nombre, precio from productos where precio != 25;
 
 
 
--- 🟡 NIVEL 4 – JOINS (MUY IMPORTANTE)
+				-- 🟡 NIVEL 4 – JOINS (MUY IMPORTANTE)
 -- Mostrar cada producto junto con su categoría.
 
 
@@ -127,7 +127,7 @@ select nombre, precio from productos where precio != 25;
 
 
 
--- 🟠 NIVEL 5 – CÁLCULOS Y GROUP BY
+				-- 🟠 NIVEL 5 – CÁLCULOS Y GROUP BY
 -- Calcular el total de dinero por pedido.
 
 
@@ -159,7 +159,7 @@ select nombre, precio from productos where precio != 25;
 
 
 
--- 🔴 NIVEL 6 – SUBCONSULTAS (DESAFÍO)
+				-- 🔴 NIVEL 6 – SUBCONSULTAS (DESAFÍO)
 -- Mostrar los productos con precio mayor al promedio.
 
 
