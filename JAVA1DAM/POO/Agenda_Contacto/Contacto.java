@@ -5,11 +5,11 @@ import java.util.ArrayList;
 class Contacto {
     // Atributos
     private String nombre;
-    private int telefono;
+    private String telefono;
     private String correoElectronico;
 
     // Constructor
-    public Contacto(String nombre, int telefono, String correoEletronico){
+    public Contacto(String nombre, String telefono, String correoEletronico){
         this.nombre = nombre;
         this.telefono = telefono;
         this.correoElectronico = correoEletronico;
@@ -29,7 +29,7 @@ class Contacto {
         return nombre;
     }
 
-    public int gettlefono(){
+    public String gettlefono(){
         return telefono;
     }
 
@@ -43,7 +43,7 @@ class Contacto {
         this.nombre = nombre;
     }
 
-    public void settelefono(int telefono){
+    public void settelefono(String telefono){
         this.telefono = telefono;
     }
 
