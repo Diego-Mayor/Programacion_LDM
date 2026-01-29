@@ -7,7 +7,7 @@ public class Bonoloto {
 
         System.out.println("--- GENERACIÓN DE 10 BOLETOS BONOLOTO ---\n");
 
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 1; i++) {
             Set<Integer> boleto = generarBoleto();
             int reintegro = new Random().nextInt(10);
 
