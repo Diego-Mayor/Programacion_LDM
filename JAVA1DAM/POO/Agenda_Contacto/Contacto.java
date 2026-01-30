@@ -1,54 +1,51 @@
-public package JAVA1DAM.POO.Agenda_Contacto;
+package POO.Agenda_Contacto;
 
-import java.util.ArrayList;
-
-class Contacto {
-    // Atributos
+public class Contacto {
+    //  ATRIBUTOS
     private String nombre;
     private String telefono;
-    private String correoElectronico;
+    private String correoelectronico;
 
-    // Constructor
-    public Contacto(String nombre, String telefono, String correoEletronico){
+    // CONSTRUCTOR
+    public Contacto(String nombre, String telefono, String correoelectronico) {
         this.nombre = nombre;
         this.telefono = telefono;
-        this.correoElectronico = correoEletronico;
+        this.correoelectronico = correoelectronico;
     }
-    //
 
+
+
+    @Override
     public String toString() {
-        return "Agenda [nombre" + nombre + ", telefono=" + telefono + ", correoElectronico=" + correoElectronico + "]";
+        return "." + nombre  + telefono  + correoelectronico;
     }
 
     public void imprimir(){
         System.out.println(toString());
     }
 
-    // GETTERS
     public String getNombre() {
         return nombre;
     }
 
-    public String gettlefono(){
-        return telefono;
-    }
-
-    public String getcorreoElectronico(){
-        return correoElectronico;
-    }
-
-    // SETTERS
-
-    public void setnombre(String nombre){
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public void settelefono(String telefono){
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
-    public void setcorreoEletronico(String correoEletronico){
-        this.correoElectronico = correoEletronico;
+    public String getCorreoelectronico() {
+        return correoelectronico;
+    }
+
+    public void setCorreoelectronico(String correoelectronico) {
+        this.correoelectronico = correoelectronico;
     }
 
 }

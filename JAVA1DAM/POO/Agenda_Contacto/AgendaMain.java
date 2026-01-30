@@ -6,52 +6,36 @@ public class AgendaMain {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
 
-        // Objeto
+        int op = 8;
+        do {
 
-        Agenda listas = new Agenda();
-        System.out.println("Ingrese la opccion a ejecutar: \n"  + //
-                        "• A - Ver contactos.\n" + //
-                        "• B - Agregar contacto.\n" + //
-                        "• C - Eliminar contacto.\n" + //
-                        "• D - Buscar por nombre.\n" + //
-                        "• E - Buscar por teléfono.\n" + //
-                        "• F - Buscar por correo.\n" + //
-                        "• G - Búsqueda global.\n" + //
-                        "• H - Salir");
+            switch (op) {
+                case 1:
+                    System.out.println("Ver Contactatos");
 
-        String op = leer.nextLine();
+                    break;
+                case 2:
+                    System.out.println("Agregar Contactos");
 
+                    System.out.println("Nombre:");
+                    String nom = leer.nextLine();
 
+                    System.out.println("Telefono");
+                    String tel = leer.nextLine();
 
+                    System.out.println("Correo Electronico");
+                    String email = leer.nextLine();
 
-        switch (op) {
-            case "A":
+                     Contacto contados = new Contacto(nom,tel,email);
 
-                break;
-            case "B":
+                case 3:
+                    System.out.println("Elimonar COntacto");
 
-                break;
-            case "C":
+                default:
+                    break;
+            }
 
-                break;
-            case "D":
+        } while (op == 8);
 
-                break;
-            case "E":
-
-                break;
-            case "F":
-
-                break;
-             case "G":
-
-                break;
-            case "H":
-
-                break;
-
-            default:
-                break;
-        }
     }
 }
