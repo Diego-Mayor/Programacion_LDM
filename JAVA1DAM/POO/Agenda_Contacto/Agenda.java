@@ -10,4 +10,31 @@ public class Agenda {
     public void vercontactos(){
         if()
     }
+<<<<<<< HEAD
+=======
+
+    public void agregarContacto(Scanner leer){
+        if(contador >= MAX_CONTACTOS){
+            System.out.println("Agenda esta llenna");
+            }else{
+                System.out.println("Ingrese nombre");
+                String nombre = leer.nextLine();
+
+                System.out.println("Ingrese telefono");
+                String telefono = leer.nextLine();
+
+                System.out.println("Ingrese correo electronico");
+                String correoelectronico = leer.nextLine();
+
+                contactos [contador] = new  Contacto(nombre,telefono,correoelectronico);
+
+            }
+    }
+
+    public void eliminarContacto(){
+        
+    }
+
+
+>>>>>>> 84d0605 (cambios)
 }
