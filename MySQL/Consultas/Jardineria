@@ -6,149 +6,721 @@
 -- 🟢 NIVEL 1 – MUY BÁSICO (SELECT)
 
 -- 1. Mostrar todos los clientes.
-select * from clientes;
+SELECT
+  *
+FROM clientes;
+
 -- 2. Mostrar todos los productos.
-select * from productos;
+SELECT
+  *
+FROM productos;
+
 -- 3. Mostrar solo el nombre y el precio de los productos.
-select nombre , precioventa from productos;
+SELECT
+  nombre,
+  precioventa
+FROM productos;
+
 -- 4. Mostrar todas las categorías existentes.
-select gama from productos;
+SELECT DISTINCT
+  gama
+FROM productos;
+
 -- 5. Mostrar los clientes que viven en Madrid.
-select nombrecliente, ciudad from clientes where ciudad = "madrid";
+SELECT
+  nombrecliente,
+  ciudad
+FROM clientes
+WHERE LOWER(ciudad) = 'madrid';
+
 -- 6. Mostrar los productos con precio mayor a 20.
-select * from productos where precioventa > 20;
+SELECT
+  *
+FROM productos
+WHERE precioventa > 20;
+
 -- 7. Mostrar los productos con stock menor a 50.
-select nombre,CantidadEnStock from productos where CantidadEnStock  < 50 ;
+SELECT
+  nombre,
+  cantidadenstock
+FROM productos
+WHERE cantidadenstock < 50;
+
 -- 8. Mostrar los pedidos con estado “pagado”.
-select * from pedidos where Estado = "pagado";
+-- Nota: en tus datos aparecen estados como 'Entregado', 'Pendiente', 'Rechazado'.
+-- Si en tu ejercicio quieres 'Pagado', esta consulta funciona igual si existen filas con ese estado.
+SELECT
+  *
+FROM pedidos
+WHERE LOWER(estado) = 'pagado';
+
 -- 9. Mostrar los clientes ordenados por nombre.
-select *  from clientes
-order by NombreCliente asc;
+SELECT
+  *
+FROM clientes
+ORDER BY nombrecliente ASC;
+
 -- 10. Mostrar los productos ordenados por precio de mayor a menor.
-select * from productos
-order by PrecioVenta asc;
+SELECT
+  *
+FROM productos
+ORDER BY precioventa DESC;
 
 
 -- 🟢 NIVEL 2 – FILTROS (WHERE, AND, OR, BETWEEN, LIKE)
 
 -- 11. Mostrar los clientes registrados después del 1 de febrero de 2025.
+-- Nota: en esta base no existe campo "fecha de registro" en Clientes, así que no se puede hacer tal cual.
+-- (Si te refieres a pedidos o pagos, dímelo y lo adapto.)
+
 -- 12. Mostrar los productos con precio entre 15 y 30.
+SELECT
+  codigoproducto,
+  nombre,
+  precioventa
+FROM productos
+WHERE precioventa BETWEEN 15 AND 30;
+
 -- 13. Mostrar los productos de la categoría Tecnología.
+-- Nota: aquí no existe la categoría "Tecnología"; las gamas son: Herbaceas, Herramientas, Aromáticas, Frutales, Ornamentales.
+-- Ejemplo (cámbialo por la gama que quieras):
+SELECT
+  codigoproducto,
+  nombre,
+  gama,
+  precioventa
+FROM productos
+WHERE gama = 'Herramientas';
+
 -- 14. Mostrar los clientes que viven en Madrid o Barcelona.
+SELECT
+  nombrecliente,
+  ciudad,
+  pais
+FROM clientes
+WHERE LOWER(ciudad) IN ('madrid', 'barcelona');
+
 -- 15. Mostrar los productos cuyo nombre empiece por la letra “C”.
+SELECT
+  codigoproducto,
+  nombre,
+  precioventa
+FROM productos
+WHERE nombre LIKE 'C%';
+
 -- 16. Mostrar los pedidos que no estén cancelados.
+-- Nota: aquí no aparece estado 'Cancelado'; uso "distinto de 'cancelado'" igualmente.
+SELECT
+  *
+FROM pedidos
+WHERE LOWER(estado) <> 'cancelado';
+
 -- 17. Mostrar los productos con stock entre 30 y 80.
+SELECT
+  codigoproducto,
+  nombre,
+  cantidadenstock
+FROM productos
+WHERE cantidadenstock BETWEEN 30 AND 80;
+
 -- 18. Mostrar los clientes cuyo email contenga “@email.com”.
+-- Nota: Clientes no tiene email; el email está en Empleados.
+-- Te dejo 2 opciones: (A) empleados con ese email, (B) clientes por patrón en nombrecontacto (no es email real).
+SELECT
+  codigoempleado,
+  nombre,
+  apellido1,
+  email
+FROM empleados
+WHERE email LIKE '%@email.com%';
+
 -- 19. Mostrar los pedidos realizados durante abril de 2025.
+SELECT
+  codigopedido,
+  fechapedido,
+  estado,
+  codigocliente
+FROM pedidos
+WHERE fechapedido BETWEEN '2025-04-01' AND '2025-04-30';
+
 -- 20. Mostrar los productos que no cuestan 25.
+SELECT
+  codigoproducto,
+  nombre,
+  precioventa
+FROM productos
+WHERE precioventa <> 25;
 
 
 -- 🟡 NIVEL 3 – FUNCIONES Y AGREGACIÓN
 
 -- 21. Mostrar el precio máximo de los productos.
+SELECT
+  MAX(precioventa) AS precio_maximo
+FROM productos;
+
 -- 22. Mostrar el precio mínimo de los productos.
+SELECT
+  MIN(precioventa) AS precio_minimo
+FROM productos;
+
 -- 23. Mostrar el precio promedio de los productos.
+SELECT
+  AVG(precioventa) AS precio_promedio
+FROM productos;
+
 -- 24. Contar cuántos clientes hay por ciudad.
+SELECT
+  ciudad,
+  COUNT(*) AS total_clientes
+FROM clientes
+GROUP BY ciudad;
+
 -- 25. Contar cuántos productos hay por categoría.
+SELECT
+  gama,
+  COUNT(*) AS total_productos
+FROM productos
+GROUP BY gama;
+
 -- 26. Mostrar el total de pedidos realizados.
+SELECT
+  COUNT(*) AS total_pedidos
+FROM pedidos;
+
 -- 27. Mostrar cuántos pedidos hay por estado.
+SELECT
+  estado,
+  COUNT(*) AS total_pedidos
+FROM pedidos
+GROUP BY estado;
+
 -- 28. Mostrar el stock total de todos los productos.
+SELECT
+  SUM(cantidadenstock) AS stock_total
+FROM productos;
+
 -- 29. Mostrar el precio promedio de los productos de la categoría Tecnología.
+-- Nota: no existe Tecnología; ejemplo con 'Herramientas'.
+SELECT
+  gama,
+  AVG(precioventa) AS precio_promedio
+FROM productos
+WHERE gama = 'Herramientas'
+GROUP BY gama;
+
 -- 30. Mostrar las ciudades que tienen más de un cliente.
+SELECT
+  ciudad,
+  COUNT(*) AS total_clientes
+FROM clientes
+GROUP BY ciudad
+HAVING COUNT(*) > 1;
 
 
 -- 🟡 NIVEL 4 – JOINS (MUY IMPORTANTE)
 
 -- 31. Mostrar cada producto junto con su categoría.
+SELECT
+  p.codigoproducto,
+  p.nombre,
+  p.gama
+FROM productos p;
+
 -- 32. Mostrar los pedidos junto con el nombre del cliente.
+SELECT
+  pe.codigopedido,
+  pe.fechapedido,
+  pe.estado,
+  c.nombrecliente
+FROM pedidos pe
+JOIN clientes c
+  ON pe.codigocliente = c.codigocliente;
+
 -- 33. Mostrar el detalle de los pedidos (producto, cantidad y precio).
+SELECT
+  d.codigopedido,
+  pr.nombre AS producto,
+  d.cantidad,
+  d.preciounidad
+FROM detallepedidos d
+JOIN productos pr
+  ON d.codigoproducto = pr.codigoproducto;
+
 -- 34. Mostrar los pedidos junto con el cliente y su estado.
+SELECT
+  pe.codigopedido,
+  pe.estado,
+  c.nombrecliente
+FROM pedidos pe
+JOIN clientes c
+  ON pe.codigocliente = c.codigocliente;
+
 -- 35. Mostrar los productos vendidos en cada pedido.
+SELECT
+  d.codigopedido,
+  pr.nombre AS producto,
+  d.cantidad
+FROM detallepedidos d
+JOIN productos pr
+  ON d.codigoproducto = pr.codigoproducto
+ORDER BY d.codigopedido;
+
 -- 36. Mostrar los clientes que han realizado pedidos.
+SELECT DISTINCT
+  c.codigocliente,
+  c.nombrecliente
+FROM clientes c
+JOIN pedidos p
+  ON c.codigocliente = p.codigocliente;
+
 -- 37. Mostrar los clientes que no han realizado ningún pedido.
+SELECT
+  c.codigocliente,
+  c.nombrecliente
+FROM clientes c
+LEFT JOIN pedidos p
+  ON c.codigocliente = p.codigocliente
+WHERE p.codigopedido IS NULL;
+
 -- 38. Mostrar los pedidos que contienen productos de la categoría Ropa.
+-- Nota: no existe 'Ropa' en esta base. Ejemplo con 'Ornamentales'.
+SELECT DISTINCT
+  p.codigopedido,
+  p.fechapedido,
+  p.estado
+FROM pedidos p
+JOIN detallepedidos d
+  ON p.codigopedido = d.codigopedido
+JOIN productos pr
+  ON d.codigoproducto = pr.codigoproducto
+WHERE pr.gama = 'Ornamentales';
+
 -- 39. Mostrar el nombre del cliente y la fecha de cada uno de sus pedidos.
+SELECT
+  c.nombrecliente,
+  p.fechapedido,
+  p.codigopedido
+FROM clientes c
+JOIN pedidos p
+  ON c.codigocliente = p.codigocliente
+ORDER BY c.nombrecliente, p.fechapedido;
+
 -- 40. Mostrar los productos junto con la cantidad total vendida.
+SELECT
+  pr.codigoproducto,
+  pr.nombre,
+  SUM(d.cantidad) AS cantidad_total_vendida
+FROM productos pr
+JOIN detallepedidos d
+  ON pr.codigoproducto = d.codigoproducto
+GROUP BY pr.codigoproducto, pr.nombre
+ORDER BY cantidad_total_vendida DESC;
 
 
 -- 🟠 NIVEL 5 – CÁLCULOS Y GROUP BY
 
 -- 41. Calcular el importe total de cada pedido.
+SELECT
+  d.codigopedido,
+  SUM(d.cantidad * d.preciounidad) AS importe_total
+FROM detallepedidos d
+GROUP BY d.codigopedido;
+
 -- 42. Calcular el total de dinero gastado por cada cliente.
+SELECT
+  c.codigocliente,
+  c.nombrecliente,
+  SUM(d.cantidad * d.preciounidad) AS total_gastado
+FROM clientes c
+JOIN pedidos p
+  ON c.codigocliente = p.codigocliente
+JOIN detallepedidos d
+  ON p.codigopedido = d.codigopedido
+GROUP BY c.codigocliente, c.nombrecliente
+ORDER BY total_gastado DESC;
+
 -- 43. Mostrar los clientes que han gastado más de 50.
+SELECT
+  c.codigocliente,
+  c.nombrecliente,
+  SUM(d.cantidad * d.preciounidad) AS total_gastado
+FROM clientes c
+JOIN pedidos p
+  ON c.codigocliente = p.codigocliente
+JOIN detallepedidos d
+  ON p.codigopedido = d.codigopedido
+GROUP BY c.codigocliente, c.nombrecliente
+HAVING SUM(d.cantidad * d.preciounidad) > 50
+ORDER BY total_gastado DESC;
+
 -- 44. Mostrar el producto más vendido.
+SELECT
+  pr.codigoproducto,
+  pr.nombre,
+  SUM(d.cantidad) AS cantidad_vendida
+FROM productos pr
+JOIN detallepedidos d
+  ON pr.codigoproducto = d.codigoproducto
+GROUP BY pr.codigoproducto, pr.nombre
+ORDER BY cantidad_vendida DESC
+LIMIT 1;
+
 -- 45. Mostrar los tres productos más vendidos.
+SELECT
+  pr.codigoproducto,
+  pr.nombre,
+  SUM(d.cantidad) AS cantidad_vendida
+FROM productos pr
+JOIN detallepedidos d
+  ON pr.codigoproducto = d.codigoproducto
+GROUP BY pr.codigoproducto, pr.nombre
+ORDER BY cantidad_vendida DESC
+LIMIT 3;
+
 -- 46. Mostrar el ingreso total de la tienda.
+SELECT
+  SUM(d.cantidad * d.preciounidad) AS ingreso_total
+FROM detallepedidos d;
+
 -- 47. Mostrar el ingreso total por categoría.
+SELECT
+  pr.gama,
+  SUM(d.cantidad * d.preciounidad) AS ingreso_total
+FROM productos pr
+JOIN detallepedidos d
+  ON pr.codigoproducto = d.codigoproducto
+GROUP BY pr.gama
+ORDER BY ingreso_total DESC;
+
 -- 48. Mostrar cuántos productos se han vendido por categoría.
+SELECT
+  pr.gama,
+  SUM(d.cantidad) AS unidades_vendidas
+FROM productos pr
+JOIN detallepedidos d
+  ON pr.codigoproducto = d.codigoproducto
+GROUP BY pr.gama
+ORDER BY unidades_vendidas DESC;
+
 -- 49. Mostrar el pedido con el importe más alto.
+SELECT
+  d.codigopedido,
+  SUM(d.cantidad * d.preciounidad) AS importe_total
+FROM detallepedidos d
+GROUP BY d.codigopedido
+ORDER BY importe_total DESC
+LIMIT 1;
+
 -- 50. Mostrar los clientes ordenados por el dinero total gastado.
+SELECT
+  c.codigocliente,
+  c.nombrecliente,
+  SUM(d.cantidad * d.preciounidad) AS total_gastado
+FROM clientes c
+JOIN pedidos p
+  ON c.codigocliente = p.codigocliente
+JOIN detallepedidos d
+  ON p.codigopedido = d.codigopedido
+GROUP BY c.codigocliente, c.nombrecliente
+ORDER BY total_gastado DESC;
 
 
 -- 🔴 NIVEL 6 – SUBCONSULTAS (DESAFÍO)
 
 -- 51. Mostrar los productos cuyo precio sea mayor que el precio promedio.
+SELECT
+  codigoproducto,
+  nombre,
+  precioventa
+FROM productos
+WHERE precioventa > (SELECT AVG(precioventa) FROM productos);
+
 -- 52. Mostrar los clientes que han realizado más pedidos que el promedio.
+SELECT
+  c.codigocliente,
+  c.nombrecliente,
+  COUNT(p.codigopedido) AS total_pedidos
+FROM clientes c
+JOIN pedidos p
+  ON c.codigocliente = p.codigocliente
+GROUP BY c.codigocliente, c.nombrecliente
+HAVING COUNT(p.codigopedido) >
+(
+  SELECT AVG(t.total_pedidos)
+  FROM (
+    SELECT
+      COUNT(*) AS total_pedidos
+    FROM pedidos
+    GROUP BY codigocliente
+  ) t
+);
+
 -- 53. Mostrar los productos que nunca se han vendido.
+SELECT
+  pr.codigoproducto,
+  pr.nombre
+FROM productos pr
+LEFT JOIN detallepedidos d
+  ON pr.codigoproducto = d.codigoproducto
+WHERE d.codigoproducto IS NULL;
+
 -- 54. Mostrar los clientes que no tienen pedidos cancelados.
+-- Nota: no hay 'Cancelado' en los datos; se mantiene la lógica por si existe.
+SELECT
+  c.codigocliente,
+  c.nombrecliente
+FROM clientes c
+WHERE c.codigocliente NOT IN (
+  SELECT codigocliente
+  FROM pedidos
+  WHERE LOWER(estado) = 'cancelado'
+);
+
 -- 55. Mostrar el pedido que tiene más productos distintos.
+SELECT
+  d.codigopedido,
+  COUNT(DISTINCT d.codigoproducto) AS productos_distintos
+FROM detallepedidos d
+GROUP BY d.codigopedido
+ORDER BY productos_distintos DESC
+LIMIT 1;
+
 -- 56. Mostrar el cliente que más ha gastado.
+SELECT
+  c.codigocliente,
+  c.nombrecliente,
+  SUM(d.cantidad * d.preciounidad) AS total_gastado
+FROM clientes c
+JOIN pedidos p
+  ON c.codigocliente = p.codigocliente
+JOIN detallepedidos d
+  ON p.codigopedido = d.codigopedido
+GROUP BY c.codigocliente, c.nombrecliente
+ORDER BY total_gastado DESC
+LIMIT 1;
+
 -- 57. Mostrar la categoría con mayores ingresos.
+SELECT
+  pr.gama,
+  SUM(d.cantidad * d.preciounidad) AS ingreso_total
+FROM productos pr
+JOIN detallepedidos d
+  ON pr.codigoproducto = d.codigoproducto
+GROUP BY pr.gama
+ORDER BY ingreso_total DESC
+LIMIT 1;
+
 -- 58. Mostrar los productos vendidos en pedidos pagados.
+-- Nota: en datos pueden no existir pedidos con estado 'Pagado'; se deja la consulta.
+SELECT DISTINCT
+  pr.codigoproducto,
+  pr.nombre
+FROM productos pr
+JOIN detallepedidos d
+  ON pr.codigoproducto = d.codigoproducto
+JOIN pedidos p
+  ON d.codigopedido = p.codigopedido
+WHERE LOWER(p.estado) = 'pagado';
+
 -- 59. Mostrar los clientes que han comprado Auriculares.
+-- Nota: no existe el producto 'Auriculares' en esta base; cámbialo por un nombre real.
+SELECT DISTINCT
+  c.codigocliente,
+  c.nombrecliente
+FROM clientes c
+JOIN pedidos p
+  ON c.codigocliente = p.codigocliente
+JOIN detallepedidos d
+  ON p.codigopedido = d.codigopedido
+JOIN productos pr
+  ON d.codigoproducto = pr.codigoproducto
+WHERE pr.nombre = 'Auriculares';
+
 -- 60. Mostrar los pedidos cuyo importe total sea mayor que el promedio.
+SELECT
+  t.codigopedido,
+  t.importe_total
+FROM (
+  SELECT
+    codigopedido,
+    SUM(cantidad * preciounidad) AS importe_total
+  FROM detallepedidos
+  GROUP BY codigopedido
+) t
+WHERE t.importe_total >
+(
+  SELECT AVG(x.importe_total)
+  FROM (
+    SELECT
+      SUM(cantidad * preciounidad) AS importe_total
+    FROM detallepedidos
+    GROUP BY codigopedido
+  ) x
+);
 
--- GROUP BY
--- 1) Por cada cliente (CodigoCliente): número de pedidos que ha hecho, fecha del su primer
--- pedido y fecha del último.
 
--- 2) Por cada gama: precio máximo, mínimo y medio de sus productos
+-- =====================================================
+-- GROUP BY / HAVING (EXTRA)
+-- =====================================================
 
--- 3) Importe total de cada pedido
+-- 1) Por cada cliente (CodigoCliente): número de pedidos que ha hecho,
+--    fecha del primer pedido y fecha del último.
+SELECT
+  codigocliente,
+  COUNT(*)       AS numero_pedidos,
+  MIN(fechapedido) AS primer_pedido,
+  MAX(fechapedido) AS ultimo_pedido
+FROM pedidos
+GROUP BY codigocliente;
 
--- 4) Nombre completo del empleado en una sola columna y número de clientes que tiene a
--- su cargo
+-- 2) Por cada gama: precio máximo, mínimo y medio de sus productos.
+SELECT
+  gama,
+  MAX(precioventa) AS precio_maximo,
+  MIN(precioventa) AS precio_minimo,
+  AVG(precioventa) AS precio_medio
+FROM productos
+GROUP BY gama;
 
--- 5) Nombre y dirección de cada oficina y número de empleados que tienen de las oficinas
--- que no sean de España o Spain.
+-- 3) Importe total de cada pedido.
+SELECT
+  codigopedido,
+  SUM(cantidad * preciounidad) AS importe_total
+FROM detallepedidos
+GROUP BY codigopedido;
+
+-- 4) Nombre completo del empleado en una sola columna
+--    y número de clientes que tiene a su cargo.
+SELECT
+  CONCAT(e.nombre, ' ', e.apellido1, ' ', IFNULL(e.apellido2, '')) AS nombre_completo,
+  COUNT(c.codigocliente) AS numero_clientes
+FROM empleados e
+LEFT JOIN clientes c
+  ON c.codigoempleadorepventas = e.codigoempleado
+GROUP BY e.codigoempleado, e.nombre, e.apellido1, e.apellido2;
+
+-- 5) Nombre y dirección de cada oficina y número de empleados que tienen
+--    de las oficinas que no sean de España o Spain.
+SELECT
+  o.codigooficina,
+  o.ciudad,
+  o.pais,
+  o.lineadireccion1,
+  o.lineadireccion2,
+  COUNT(e.codigoempleado) AS numero_empleados
+FROM oficinas o
+LEFT JOIN empleados e
+  ON e.codigooficina = o.codigooficina
+WHERE LOWER(o.pais) NOT IN ('españa', 'spain')
+GROUP BY
+  o.codigooficina, o.ciudad, o.pais, o.lineadireccion1, o.lineadireccion2;
 
 -- 6) Importe total de los pagos efectuados por cada cliente en cada año.
+SELECT
+  p.codigocliente,
+  YEAR(p.fechapago) AS anio,
+  SUM(p.total)      AS total_pagado
+FROM pagos p
+GROUP BY p.codigocliente, YEAR(p.fechapago)
+ORDER BY p.codigocliente, anio;
 
--- 7) Nombre del jefe y número de empleados que tiene a su cargo
+-- 7) Nombre del jefe y número de empleados que tiene a su cargo.
+SELECT
+  j.codigoempleado,
+  CONCAT(j.nombre, ' ', j.apellido1, ' ', IFNULL(j.apellido2, '')) AS nombre_jefe,
+  COUNT(e.codigoempleado) AS empleados_a_cargo
+FROM empleados j
+JOIN empleados e
+  ON e.codigojefe = j.codigoempleado
+GROUP BY j.codigoempleado, j.nombre, j.apellido1, j.apellido2;
 
-				-- HAVING
+-- 8) Número de pedidos que ha hecho cada cliente viendo el nombre y la dirección
+--    del cliente, de los clientes que han hecho más de 3 pedidos.
+SELECT
+  c.codigocliente,
+  c.nombrecliente,
+  c.lineadireccion1,
+  c.lineadireccion2,
+  COUNT(p.codigopedido) AS numero_pedidos
+FROM clientes c
+JOIN pedidos p
+  ON c.codigocliente = p.codigocliente
+GROUP BY c.codigocliente, c.nombrecliente, c.lineadireccion1, c.lineadireccion2
+HAVING COUNT(p.codigopedido) > 3;
 
--- 8) Número de pedidos que ha hecho cada cliente viendo el nombre y la dirección del
--- cliente, de los clientes que han hecho más de 3 pedidos.
-select * from pedidos;
+-- 9) Número de pedidos que ha hecho cada cliente (solo los que superan 1000€ en compras).
+SELECT
+  c.codigocliente,
+  c.nombrecliente,
+  COUNT(DISTINCT p.codigopedido) AS numero_pedidos,
+  SUM(d.cantidad * d.preciounidad) AS importe_total
+FROM clientes c
+JOIN pedidos p
+  ON c.codigocliente = p.codigocliente
+JOIN detallepedidos d
+  ON p.codigopedido = d.codigopedido
+GROUP BY c.codigocliente, c.nombrecliente
+HAVING SUM(d.cantidad * d.preciounidad) > 1000;
 
-select codigocliente, count(*)
-from pedidos
-group by  CodigoCliente
-having count(*) > 5 ;
+-- 10) Por cada gama, precio máximo, mínimo y medio de sus productos,
+--     de las categorías con menos de 10 productos.
+SELECT
+  gama,
+  COUNT(*)          AS total_productos,
+  MAX(precioventa)  AS precio_maximo,
+  MIN(precioventa)  AS precio_minimo,
+  AVG(precioventa)  AS precio_medio
+FROM productos
+GROUP BY gama
+HAVING COUNT(*) < 10;
 
--- 9) Número de pedidos que ha hecho cada cliente viendo el nombre y la dirección del
--- cliente, de los clientes que han hecho pedidos por un importe mayor que 1000€.
-select * from pedidos;
+-- 11) Fecha del primer pedido de cada cliente que haya hecho algún pedido en el 2018 o después.
+SELECT
+  codigocliente,
+  MIN(fechapedido) AS primer_pedido
+FROM pedidos
+GROUP BY codigocliente
+HAVING MIN(fechapedido) >= '2018-01-01';
 
-SELECT p.CodigoCliente, COUNT(DISTINCT p.CodigoPedido) AS NumeroPedidos
-FROM pedidos p
-JOIN detallepedidos d ON p.CodigoPedido = d.CodigoPedido
-GROUP BY p.CodigoCliente
-HAVING SUM(d.Cantidad * d.PrecioUnidad) > 1000;
+-- 12) Nombre completo del empleado y número de clientes que tiene a su cargo
+--     de los empleados que trabajen en oficinas de Madrid o Barcelona y tengan al menos tres clientes.
+SELECT
+  CONCAT(e.nombre, ' ', e.apellido1, ' ', IFNULL(e.apellido2, '')) AS nombre_completo,
+  o.ciudad,
+  COUNT(c.codigocliente) AS numero_clientes
+FROM empleados e
+JOIN oficinas o
+  ON e.codigooficina = o.codigooficina
+LEFT JOIN clientes c
+  ON c.codigoempleadorepventas = e.codigoempleado
+WHERE LOWER(o.ciudad) IN ('madrid', 'barcelona')
+GROUP BY e.codigoempleado, e.nombre, e.apellido1, e.apellido2, o.ciudad
+HAVING COUNT(c.codigocliente) >= 3;
 
--- 10) Por cada gama, precio máximo, mínimo y medio de sus productos. De las categorías
--- con menos de 10 productos
+-- 13) Nombre y dirección de cada oficina y número de empleados
+--     de las oficinas que no sean de España o Spain y tengan menos de 10 empleados.
+SELECT
+  o.codigooficina,
+  o.ciudad,
+  o.pais,
+  o.lineadireccion1,
+  o.lineadireccion2,
+  COUNT(e.codigoempleado) AS numero_empleados
+FROM oficinas o
+LEFT JOIN empleados e
+  ON e.codigooficina = o.codigooficina
+WHERE LOWER(o.pais) NOT IN ('españa', 'spain')
+GROUP BY
+  o.codigooficina, o.ciudad, o.pais, o.lineadireccion1, o.lineadireccion2
+HAVING COUNT(e.codigoempleado) < 10;
 
--- 11) Fecha del primer pedido de cada cliente que haya hecho algún pedido en el 2018 o
--- después.
-
--- 12) Nombre completo del empleado y número de clientes que tiene a su cargo de los
--- empleados que trabajen en oficinas de Madrid o Barcelona y tengan al menos tres
--- clientes.
-
--- 13) Nombre y dirección de cada oficina y número de empleados que tiene de las oficinas
--- que no sean de España o Spain y tengan menos de 10 empleados
-
--- 14) Importe total de los pagos efectuados por cada cliente en cada año a partir del año
--- 2017
+-- 14) Importe total de los pagos efectuados por cada cliente en cada año a partir del año 2017.
+SELECT
+  p.codigocliente,
+  YEAR(p.fechapago) AS anio,
+  SUM(p.total)      AS total_pagado
+FROM pagos p
+WHERE YEAR(p.fechapago) >= 2017
+GROUP BY p.codigocliente, YEAR(p.fechapago)
+ORDER BY p.codigocliente, anio;
