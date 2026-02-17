@@ -1,0 +1,240 @@
+/* ================= GENERAL ================= */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: #f4f4f4;
+    padding: 15px;
+    text-align: center;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+}
+
+/* (AGREGADO) Card general para separar secciones */
+.card {
+    border: 1px solid #ddd;
+    margin: 14px;
+    padding: 14px;
+    background: #fff;
+}
+
+/* ================= MENÚ VERTICAL ================= */
+
+.menu-vertical ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-vertical > ul > li {
+    background: darkgreen;
+    position: relative;
+}
+
+.menu-vertical a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+.menu-vertical ul ul {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    display: none;
+    background: olivedrab;
+    min-width: 200px;
+}
+
+.menu-vertical li:hover > ul {
+    display: block;
+}
+
+/* ================= MENÚ HORIZONTAL ================= */
+
+.menu-horizontal ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin: 10px 14px;
+    padding: 0;
+}
+
+.menu-horizontal a {
+    padding: 8px 12px;
+    background: #ddd;
+    display: inline-block;
+}
+
+/* ================= PRÁCTICA 07 ================= */
+
+.paises {
+    background: #d8da3d;
+    color: purple;
+}
+
+.pais {
+    width: 250px;
+    padding: 10px;
+    border: 3px solid black;
+    margin: 10px;
+}
+
+.izquierda { float: left; }
+.derecha { float: right; }
+.centro { margin: auto; clear: both; }
+
+.espana { border-style: double; }
+.japon { border-style: dashed; }
+.italia { border-style: dotted; }
+
+.pais img {
+    width: 100px;
+}
+
+/* ================= PRÁCTICA 10 ================= */
+
+.gafam-layout {
+    display: flex;
+    gap: 20px;
+}
+
+.indice {
+    width: 15%;
+    border: 3px dotted blue;
+    padding: 10px;
+}
+
+.indice a {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Estados enlaces */
+.indice a:link { color: greenyellow; }
+.indice a:visited { color: yellow; }
+.indice a:hover { background: darkorange; }
+.indice a:focus { border: 2px dashed pink; }
+.indice a:active { font-size: 20px; }
+
+.indice a::before {
+    content: attr(content) " ";
+    font-weight: bold;
+}
+
+.volver::before {
+    content: attr(content);
+}
+
+/* =====================================================
+   (AGREGADO) PRÁCTICA 09 - STAR WARS
+   - Importante: NO usamos clases/ID para table/tr/td
+   - Se aplican pseudoclases sobre tr y td
+   ===================================================== */
+
+.starwars {
+    /* Fondo tipo “espacio” */
+    background-image: url("img/El-universo-tiene-diez-veces-mas-galaxias-de-las-que-se-pensaba.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+
+.starwars caption,
+.starwars .sw-texto {
+    color: white;
+}
+
+/* Tabla centrada */
+.starwars table {
+    width: 70%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+/* Bordes */
+.starwars table,
+.starwars tr,
+.starwars td {
+    border: 1px solid black;
+}
+
+/* Encabezado (primera fila) */
+.starwars tr:first-child td {
+    background-color: darkblue;
+    color: #e89e10;
+    font-weight: bold;
+}
+
+/* Filas alternadas (solo datos, sin header ni total) */
+.starwars tr:nth-child(even):not(:first-child):not(:last-child) td {
+    background-color: lightgrey;
+    color: #444;
+}
+
+.starwars tr:nth-child(odd):not(:first-child):not(:last-child) td {
+    background-color: cornflowerblue;
+    color: #444;
+}
+
+/* Última fila (Total) */
+.starwars tr:last-child td {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+/* Columna Year en negrita */
+.starwars td:nth-child(1) {
+    font-weight: bold;
+}
+
+/* Columna Title en cursiva */
+.starwars td:nth-child(2) {
+    font-style: italic;
+}
+
+/* Columna Net subrayada */
+.starwars td:nth-child(5) {
+    text-decoration: underline;
+}
+
+/* ================= SVG ================= */
+
+.techo {
+    fill: red;
+    stroke: black;
+    stroke-width: 3;
+}
+
+.casa {
+    fill: lightgray;
+    stroke: black;
+    stroke-width: 3;
+}
+
+.caja {
+    fill: lightyellow;
+    stroke: black;
+    stroke-width: 4;
+}
+
+.division {
+    stroke: black;
+    stroke-width: 4;
+}
+
+/* (AJUSTADO) Diana más gruesa como pediste */
+.diana {
+    fill: none;
+    stroke: black;
+    stroke-width: 10;
+}

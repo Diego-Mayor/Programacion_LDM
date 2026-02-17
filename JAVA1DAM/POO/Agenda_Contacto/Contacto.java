@@ -13,11 +13,11 @@ public class Contacto {
         this.correoelectronico = correoelectronico;
     }
 
-
+    
 
     @Override
     public String toString() {
-        return "." + nombre  + telefono  + correoelectronico;
+        return "Contacto nombre," + nombre + " telefono" + telefono + ", correoelectronico=" + correoelectronico;
     }
 
     public void imprimir(){
@@ -47,5 +47,6 @@ public class Contacto {
     public void setCorreoelectronico(String correoelectronico) {
         this.correoelectronico = correoelectronico;
     }
+    
 
 }

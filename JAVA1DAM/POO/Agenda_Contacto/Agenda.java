@@ -1,40 +1,133 @@
 package POO.Agenda_Contacto;
 
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Agenda {
-    int maximoContactos = 100;
-    int contador = 0;
-    Contacto contados [] = new Contacto[maximoContactos];
+    private ArrayList<Contacto> listaContactos = new ArrayList<>();
 
-    public void vercontactos(){
-        if()
-    }
-<<<<<<< HEAD
-=======
-
-    public void agregarContacto(Scanner leer){
-        if(contador >= MAX_CONTACTOS){
-            System.out.println("Agenda esta llenna");
-            }else{
-                System.out.println("Ingrese nombre");
-                String nombre = leer.nextLine();
-
-                System.out.println("Ingrese telefono");
-                String telefono = leer.nextLine();
-
-                System.out.println("Ingrese correo electronico");
-                String correoelectronico = leer.nextLine();
-
-                contactos [contador] = new  Contacto(nombre,telefono,correoelectronico);
-
-            }
+    public Agenda() {
     }
 
-    public void eliminarContacto(){
-        
+    public void verContactos() {
+
+    if (listaContactos.isEmpty()) {
+        System.out.println("No hay contactos");
+    } else {
+        for (int i = 0; i < listaContactos.size(); i++) {
+            System.out.println(i + ". " + listaContactos.get(i));
+        }
     }
 
-
->>>>>>> 84d0605 (cambios)
+    
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* 🧩 Resumen mental ultra simple
+Acción	Método
+Crear lista	new ArrayList<>()
+Agregar	.add(objeto)
+Saber tamaño	.size()
+Obtener elemento	.get(indice)
+Borrar	.remove(indice)
+Ver si está vacía	.isEmpty()
+
+import java.util.ArrayList;
+
+public class EjemploArrayList {
+
+    public static void main(String[] args) {
+
+        // ================================
+        // 1️⃣ CREAR UN ARRAYLIST
+        // ================================
+        ArrayList<String> lista = new ArrayList<>();
+
+        // ================================
+        // 2️⃣ AGREGAR ELEMENTOS
+        // ================================
+        lista.add("Maria");
+        lista.add("Juan");
+        lista.add("Pedro");
+
+        System.out.println("Lista después de agregar elementos:");
+        System.out.println(lista);
+        System.out.println();
+
+        // ================================
+        // 3️⃣ SABER EL TAMAÑO
+        // ================================
+        System.out.println("Tamaño de la lista: " + lista.size());
+        System.out.println();
+
+        // ================================
+        // 4️⃣ RECORRER CON FOR (USANDO ÍNDICE)
+        // ================================
+        System.out.println("Recorrer con for clásico:");
+        for (int i = 0; i < lista.size(); i++) {
+            System.out.println(i + ". " + lista.get(i));
+        }
+        System.out.println();
+
+        // ================================
+        // 5️⃣ RECORRER CON FOR-EACH
+        // ================================
+        System.out.println("Recorrer con for-each:");
+        for (String nombre : lista) {
+            System.out.println(nombre);
+        }
+        System.out.println();
+
+        // ================================
+        // 6️⃣ ACCEDER A UN ELEMENTO ESPECÍFICO
+        // ================================
+        String primerElemento = lista.get(0);
+        System.out.println("Primer elemento: " + primerElemento);
+        System.out.println();
+
+        // ================================
+        // 7️⃣ BORRAR UN ELEMENTO POR ÍNDICE
+        // ================================
+        lista.remove(1); // Borra el elemento en posición 1
+
+        System.out.println("Lista después de borrar posición 1:");
+        for (int i = 0; i < lista.size(); i++) {
+            System.out.println(i + ". " + lista.get(i));
+        }
+        System.out.println();
+
+        // ================================
+        // 8️⃣ COMPROBAR SI ESTÁ VACÍA
+        // ================================
+        if (lista.isEmpty()) {
+            System.out.println("La lista está vacía");
+        } else {
+            System.out.println("La lista NO está vacía");
+        }
+        System.out.println();
+
+        // ================================
+        // 9️⃣ BORRAR TODO
+        // ================================
+        lista.clear();
+
+        System.out.println("Después de usar clear():");
+        System.out.println("Tamaño: " + lista.size());
+
+        if (lista.isEmpty()) {
+            System.out.println("Ahora la lista está vacía");
+        }
+    }
+}
+*/

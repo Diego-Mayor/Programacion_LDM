@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Examen HTML + CSS</title>
+
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body id="top">
+
+    <!-- ================= HEADER ================= -->
+    <header>
+        <h1>EXAMEN COMPLETO</h1>
+    </header>
+
+    <div class="layout">
+
+        <!-- ================= MENÚ VERTICAL ================= -->
+        <aside>
+            <nav class="menu-vertical">
+                <ul>
+                    <li>
+                        <a href="#accion">Acción</a>
+                        <ul>
+                            <li><a href="#accion">Lucha</a></li>
+                            <li><a href="#accion">Arcade</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#estrategia">Estrategia</a>
+                        <ul>
+                            <li><a href="#estrategia">Tiempo real</a></li>
+                            <li><a href="#estrategia">Por turnos</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#rol">Rol</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- ================= CONTENIDO ================= -->
+        <main>
+
+            <!-- ================= MENÚ HORIZONTAL ================= -->
+            <!-- (MANTENIDO) + agregado Star Wars -->
+            <nav class="menu-horizontal">
+                <ul>
+                    <li><a href="#p07">Países</a></li>
+                    <li><a href="#p10">GAFAM</a></li>
+                    <li><a href="#p09">Star Wars</a></li>
+                    <li><a href="#svg">SVG</a></li>
+                </ul>
+            </nav>
+
+            <!-- ================= PRÁCTICA 07 ================= -->
+            <section id="p07" class="card paises">
+                <h2>Práctica 07 - Países</h2>
+
+                <div class="pais espana izquierda">
+                    <h3>🇪🇸 España</h3>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Sagrada_Familia_01.jpg" alt="España">
+                    <p>España es un país europeo.</p>
+                </div>
+
+                <div class="pais japon derecha">
+                    <h3>🇯🇵 Japón</h3>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Mount_Fuji_from_Lake_Kawaguchi.jpg" alt="Japón">
+                    <p>Japón es un país asiático.</p>
+                </div>
+
+                <div class="pais italia centro">
+                    <h3>🇮🇹 Italia</h3>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Colosseo_2020.jpg" alt="Italia">
+                    <p>Italia es un país europeo.</p>
+                </div>
+            </section>
+
+            <!-- ================= PRÁCTICA 10 ================= -->
+            <section id="p10" class="card">
+                <h2>Práctica 10 - GAFAM</h2>
+
+                <div class="gafam-layout">
+
+                    <aside class="indice">
+                        <a href="#google" content="1.">Google</a>
+                        <a href="#amazon" content="2.">Amazon</a>
+                        <a href="#apple" content="3.">Apple</a>
+                    </aside>
+
+                    <div class="contenido-gafam">
+
+                        <section id="google">
+                            <h3>Google</h3>
+                            <p>Empresa de búsqueda en internet.</p>
+                            <a href="#top" class="volver" content="⬆ Volver arriba"></a>
+                        </section>
+
+                        <section id="amazon">
+                            <h3>Amazon</h3>
+                            <p>Empresa de comercio electrónico.</p>
+                            <a href="#top" class="volver" content="⬆ Volver arriba"></a>
+                        </section>
+
+                        <section id="apple">
+                            <h3>Apple</h3>
+                            <p>Empresa de dispositivos electrónicos.</p>
+                            <a href="#top" class="volver" content="⬆ Volver arriba"></a>
+                        </section>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- =====================================================
+                 PRÁCTICA 09 - STAR WARS (AGREGADO)
+                 REGLAS:
+                 - Sin <th> (solo td)
+                 - NO usar clases/ID en la TABLA (table/tr/td)
+                 - Pseudoclases se aplican desde CSS
+                 ===================================================== -->
+            <section id="p09" class="card starwars">
+                <h2>Práctica 09 - Star Wars</h2>
+
+                <p class="sw-texto">
+                    A continuación mostramos la tabla comparativa de las películas de Star Wars
+                </p>
+
+                <!-- En el enunciado piden "leyenda con imagen".
+                     Usamos caption (correcto en tablas). -->
+                <table>
+                    <caption>
+                        Películas
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg"
+                             width="50"
+                             alt="Logo Star Wars">
+                        (en millones de dólares)
+                    </caption>
+
+                    <!-- Encabezado (sin th) -->
+                    <tr>
+                        <td>Year</td>
+                        <td>Title</td>
+                        <td>Budget</td>
+                        <td>Box office</td>
+                        <td>Net</td>
+                    </tr>
+
+                    <tr>
+                        <td>1977</td>
+                        <td>A New Hope</td>
+                        <td>11</td>
+                        <td>786.6</td>
+                        <td>775.6</td>
+                    </tr>
+
+                    <tr>
+                        <td>1980</td>
+                        <td>The Empire Strikes Back</td>
+                        <td>23</td>
+                        <td>534.1</td>
+                        <td>511.1</td>
+                    </tr>
+
+                    <tr>
+                        <td>1983</td>
+                        <td>Return of the Jedi</td>
+                        <td>32.5</td>
+                        <td>572.7</td>
+                        <td>540.2</td>
+                    </tr>
+
+                    <tr>
+                        <td>1999</td>
+                        <td>The Phantom Menace</td>
+                        <td>115</td>
+                        <td>1027</td>
+                        <td>912</td>
+                    </tr>
+
+                    <tr>
+                        <td>2002</td>
+                        <td>Attack of the Clones</td>
+                        <td>115</td>
+                        <td>656.6</td>
+                        <td>541.6</td>
+                    </tr>
+
+                    <tr>
+                        <td>2005</td>
+                        <td>Revenge of the Sith</td>
+                        <td>115</td>
+                        <td>848.9</td>
+                        <td>733.9</td>
+                    </tr>
+
+                    <tr>
+                        <td>2008</td>
+                        <td>The Clone Wars</td>
+                        <td>8.5</td>
+                        <td>68.6</td>
+                        <td>60.1</td>
+                    </tr>
+
+                    <tr>
+                        <td>2015</td>
+                        <td>The Force Awakens</td>
+                        <td>306</td>
+                        <td>2058</td>
+                        <td>1752</td>
+                    </tr>
+
+                    <tr>
+                        <td>2016</td>
+                        <td>Rogue One</td>
+                        <td>200</td>
+                        <td>1056</td>
+                        <td>856</td>
+                    </tr>
+
+                    <tr>
+                        <td>2017</td>
+                        <td>The Last Jedi</td>
+                        <td>200</td>
+                        <td>1321</td>
+                        <td>1121</td>
+                    </tr>
+
+                    <tr>
+                        <td>2018</td>
+                        <td>Solo</td>
+                        <td>275</td>
+                        <td>392.9</td>
+                        <td>117.9</td>
+                    </tr>
+
+                    <tr>
+                        <td>Total</td>
+                        <td></td>
+                        <td>1126</td>
+                        <td>8929.5</td>
+                        <td>7803.5</td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- ================= SVG ================= -->
+            <section id="svg" class="card">
+                <h2>Práctica SVG</h2>
+
+                <!-- CASA (ARREGLADA: techo separado del cuerpo) -->
+                <svg width="200" height="170" viewBox="0 0 200 170" aria-label="Casa">
+                    <!-- Techo -->
+                    <polygon points="50,60 100,20 150,60" class="techo"></polygon>
+
+                    <!-- Cuerpo: empieza en y=75 para dejar hueco (separación) -->
+                    <rect x="60" y="75" width="80" height="70" class="casa"></rect>
+                </svg>
+
+                <!-- CAJA DIVIDIDA (OK) -->
+                <svg width="200" height="150" viewBox="0 0 200 150" aria-label="Caja">
+                    <rect x="30" y="30" width="140" height="80" class="caja"></rect>
+                    <line x1="100" y1="30" x2="100" y2="110" class="division"></line>
+                </svg>
+
+                <!-- DIANA (3 círculos, SOLO círculos) -->
+                <svg width="200" height="200" viewBox="0 0 200 200" aria-label="Diana">
+                    <circle cx="100" cy="100" r="70" class="diana"></circle>
+                    <circle cx="100" cy="100" r="45" class="diana"></circle>
+                    <circle cx="100" cy="100" r="20" class="diana"></circle>
+                </svg>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
