@@ -1,0 +1,55 @@
+
+
+/* Tabla centrada */
+.table {
+    width: 70%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+/* Bordes */
+.Examen table,
+.Examens tr,
+.Examen td {
+    border: 1px solid black;
+}
+
+/* Encabezado (primera fila) */
+.Examen tr:first-child td {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+
+/* Filas alternadas (solo datos, sin header ni total) */
+.Examen tr:nth-child(even):not(:first-child):not(:last-child) td {
+    background-color: #FFFF66;
+    color: black;
+}
+
+.Examen tr:nth-child(odd):not(:first-child):not(:last-child) td {
+    background-color:white;
+    color: black;
+}
+
+/* Última fila (Total) */
+.Examen tr:last-child td  {
+    background-color: lightcyan;
+    color: red;
+    font-weight: bold;
+}
+
+/* Columna Year en negrita */
+.Examen td:nth-child(1) {
+    font-weight: bold;
+}
+
+/* Columna Title en cursiva */
+.Examen td:nth-child() {
+    font-style: italic;
+}
+
+/* Columna Net subrayada */
+.Examen td:nth-child(5) {
+    text-decoration: underline;
+}
