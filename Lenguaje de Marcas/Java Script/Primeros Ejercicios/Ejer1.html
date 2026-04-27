@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicios de JS</title>
@@ -9,6 +10,65 @@
     <script>
         console.log('hola mundo');
     </script>
-    
+
 </body>
 </html>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="titulo"></h1>
+<div id="tabla"></div>
+
+<script>
+// variable de op
+let operador = prompt("Numero de Ejercicio");
+  switch(operador){
+  case "1":
+    // variables
+    let numero1 = Number(prompt("¿Identificar numero1 si es mayor?"));
+    let numero2 = Number(prompt("¿Identificar numero2 si es mayor?"));
+    let numero3 = Number(prompt("¿Identificar numero3 si es mayor?"));
+
+    let mayor;
+
+    // Condicionales.
+    if(numero1 > numero2 && numero3 ){
+      mayor = numero1;
+    }else if(numero2 > numero2 && numero3){
+      mayor = numero2
+    }else if(numero3 > numero1 && numero2){
+      mayor = numero3
+    }
+    document.write(mayor);
+
+    break;
+
+  case "2":
+    // variable
+    let datoverifi = Number(prompt("¿Identificar numero1 si es mayor?"));
+
+    if(datoverifi == 0){
+      document.write("Numero neutral");
+    }else if(datoverifi > 0){
+      document.write("Es positivo");
+    }else if(datoverifi < 0){
+      document.write("Es negativo");
+    }
+    break;
+
+  case "3":
+
+  default:
+    // si no coincide con ninguno
+}
+
+
+</script>
+
+
+</body>
+</html>
+
